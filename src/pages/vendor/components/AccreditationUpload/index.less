@@ -1,0 +1,33 @@
+.accreditationUpload {
+  :global {
+    .label {
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+    }
+
+    .label.required::before {
+      content: '*';
+      color: var(--danger-color);
+      display: inline-block;
+      margin-inline-end: 4px;
+      font-size: 14px;
+      line-height: 1;
+      font-family: SimSun, sans-serif;
+    }
+
+    .validity-period {
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .sub-file-category {
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+}

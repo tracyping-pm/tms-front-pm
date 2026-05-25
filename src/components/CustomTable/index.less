@@ -1,0 +1,96 @@
+.customTableContainer {
+  :global {
+    .filterSticky {
+      &::after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background-color: #f5f5f5;
+        position: absolute;
+        bottom: -1px;
+      }
+    }
+  }
+}
+
+.customTable {
+  :global {
+    .ant-pro-query-filter-row {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      display: flex;
+      gap: 24px 16px;
+
+      .ant-col {
+        margin: 0 !important;
+        padding: 0 !important;
+        max-width: none !important;
+        flex: none !important;
+
+        .ant-form-item-no-colon {
+          display: none !important;
+        }
+      }
+    }
+
+    .ant-pro-table-search {
+      margin-block-end: 1px;
+    }
+
+    .ant-table-wrapper {
+      min-height: 400px;
+    }
+
+    .ant-table-wrapper table tr th.ant-table-selection-column {
+      padding-inline: 8px;
+    }
+
+    .ant-table-wrapper .ant-table-tbody > tr.ant-table-row-selected > td {
+      background: #e5f4f3;
+    }
+
+    .ant-pro-table-list-toolbar-container {
+      padding-block: 24px;
+    }
+
+    .ant-pro-card-body {
+      padding-block: 24px;
+    }
+
+    .ant-pro-table-alert {
+      margin-block-end: 12px;
+      background-color: #fff;
+
+      .ant-pro-table-alert-container {
+        padding-block: 0;
+        padding-inline: 0;
+      }
+    }
+  }
+}
+
+.fixedSpin {
+  :global(.ant-table-wrapper .ant-spin) {
+    position: fixed;
+    top: 50%;
+    left: calc(50% + 110px);
+    transform: translate(-50%, -50%);
+  }
+}
+
+.toolBarWrap {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+:global(.proTableForm) {
+  border-bottom: 1px solid #eff1f4;
+}
+
+.noStyle {
+  :global(.ant-pro-card-body) {
+    padding-block: 0;
+    padding-inline: 0;
+  }
+}

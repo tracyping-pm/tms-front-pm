@@ -1,0 +1,133 @@
+.common {
+  position: absolute;
+  right: -16px;
+  top: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(45deg);
+  width: 60px;
+  height: 18px;
+  font-size: 10px;
+  color: #fff;
+  z-index: 9;
+}
+
+.file {
+  &_item {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    background: rgba(0, 0, 0, 45%);
+    border-radius: 5px;
+    border: 1px solid #d9d9d9;
+    overflow: hidden;
+    user-select: none;
+
+    &_tagName {
+      transform: scale(1);
+    }
+
+    &_otherTag {
+      .common();
+
+      background-image: url('../../../public/img/file_common_tag.png');
+    }
+
+    &_shadow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 120px;
+      height: 120px;
+      transition-property: all;
+      transition-duration: 0.3s;
+      cursor: pointer;
+      user-select: none;
+      background-color: rgba(0, 0, 0, 50%);
+      opacity: 0;
+      z-index: 1;
+
+      &_icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+
+        &_span {
+          width: 100%;
+          display: flex;
+          flex-wrap: nowrap;
+          align-items: center;
+          text-align: left;
+          gap: 6px;
+          font-size: 14px;
+          color: rgba(255, 255, 255, 78%);
+          font-weight: bold;
+          transition: all 0.2s;
+
+          &:hover {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 100%);
+          }
+        }
+      }
+    }
+
+    &:hover > &_shadow {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.listView {
+  width: 252px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+
+  :global {
+    .ant-image {
+      overflow: hidden;
+    }
+
+    .thumbnail {
+      flex-shrink: 0;
+      flex-grow: 0;
+    }
+
+    .file-type {
+      flex: auto;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px;
+      text-align: left;
+      color: var(--primary-color);
+    }
+
+    .operate {
+      flex-shrink: 0;
+      flex-grow: 0;
+      // padding-right: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+
+      .ant-btn {
+        width: 14px;
+        height: 14px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}

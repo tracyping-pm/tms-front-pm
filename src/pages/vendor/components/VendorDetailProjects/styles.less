@@ -1,0 +1,107 @@
+.projects {
+  padding: 8px 0;
+  box-sizing: border-box;
+  min-height: 400px;
+  width: 100%;
+
+  :global {
+    .customTable {
+      .ant-pro-query-filter {
+        padding: 0;
+        padding-bottom: 24px;
+      }
+
+      .ant-pro-card-body {
+        padding: 0;
+      }
+    }
+  }
+}
+
+.commonText {
+  height: 22px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #595959;
+}
+
+.statusText {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  &_btn {
+    margin: 0;
+    padding: 0 6px;
+    display: flex;
+    align-items: center;
+    height: 24px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #009688;
+    cursor: pointer;
+    user-select: none;
+  }
+}
+
+.listForm {
+  padding: 0 24px 24px;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 24px;
+  border-bottom: 1px solid #f2f2f2;
+
+  :global {
+    .ant-form-item {
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+.operateBtn {
+  padding: 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.dropdown {
+  &_form {
+    padding: 0 8px;
+
+    &_label {
+      margin: 4px 0 2px;
+      display: flex;
+      align-items: center;
+      height: 22px;
+      font-size: 14px;
+      color: #1f1f1f;
+    }
+  }
+
+  &_bottom {
+    margin-top: 20px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 4px 4px;
+    border-top: 1px solid #eff1f4;
+  }
+
+  :global {
+    .ant-form-item {
+      margin-bottom: 8px !important;
+    }
+  }
+}

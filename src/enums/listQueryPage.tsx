@@ -1,0 +1,4 @@
+export enum ListQueryPageEnum {
+  WAYBILL_LIST = 'WAYBILL_LIST',
+  PROJECT_WAYBILL_LIST = 'PROJECT_WAYBILL_LIST',
+}

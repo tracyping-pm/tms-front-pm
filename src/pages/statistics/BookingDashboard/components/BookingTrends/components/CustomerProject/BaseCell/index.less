@@ -1,0 +1,34 @@
+.baseCell {
+  min-width: 1px;
+  min-height: 1px;
+
+  // 撑开父元素
+  &::before {
+    content: attr(data-title);
+    opacity: 0;
+  }
+
+  &::after {
+    content: attr(data-title);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 4px;
+    background-color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  :global {
+    .cell-toggle {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+  }
+}

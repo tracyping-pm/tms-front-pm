@@ -1,0 +1,64 @@
+.faTransportation {
+  margin-top: 24px;
+  background-color: #fff;
+
+  :global {
+    .transportationFilterForm {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .fa-transportation-table {
+      background-color: #fff;
+
+      .ant-btn {
+        padding: 0;
+        height: auto;
+      }
+
+      .total-cell {
+        color: rgba(0, 0, 0, 88%);
+        font-weight: bolder;
+      }
+
+      .table-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .ant-table-cell {
+        min-width: 110px;
+      }
+
+      .ant-table-selection-column {
+        min-width: 50px;
+      }
+
+      .base-cell {
+        min-width: 100px;
+      }
+    }
+
+    .selectedText {
+      font-size: 14;
+      color: rgba(0, 0, 0, 68%);
+      height: 22px;
+
+      span {
+        color: rgba(0, 0, 0, 88%);
+      }
+    }
+  }
+
+  .topOperate {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    margin-top: 16px;
+  }
+}

@@ -1,0 +1,56 @@
+.expiringDayFilter {
+  // 基础变量定义
+  @color-normal: #000000;
+  @color-warning: #faad14; // Antd Warning Yellow
+  @color-danger: #ff4d4f; // Antd Error Red
+  @color-disabled: #bfbfbf; // Gray
+
+  .expiringDay {
+    padding: 16px;
+    background: #fff;
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 8%);
+    }
+
+    // 状态样式
+    &.status-normal .expiringDayValue {
+      color: @color-normal;
+    }
+
+    &.status-warning .expiringDayValue {
+      color: @color-warning;
+    }
+
+    &.status-danger .expiringDayValue {
+      color: @color-danger;
+    }
+
+    &.status-disabled {
+      .expiringDayValue {
+        color: @color-disabled;
+      }
+    }
+
+    // 选中态：增加边框厚度或背景阴影
+    &.active {
+      border-color: var(--primary-color);
+    }
+
+    .expiringDayTitle {
+      font-size: 13px;
+      color: rgba(0, 0, 0, 45%);
+      margin-bottom: 8px;
+    }
+
+    .expiringDayValue {
+      font-size: 24px;
+      font-family: 'Helvetica Neue', Arial;
+      font-weight: bold;
+    }
+  }
+}

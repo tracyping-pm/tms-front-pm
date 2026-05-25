@@ -1,0 +1,35 @@
+.rangeInput {
+  width: 209px !important;
+  border-radius: 0;
+}
+
+.opportunityList {
+  :global {
+    .customTable {
+      .ant-pro-card-body {
+        padding: 0;
+      }
+    }
+  }
+}
+
+.btn {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: #009688;
+}
+
+.opportunityStatus {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  :global {
+    .ant-badge {
+      display: inline;
+    }
+  }
+}

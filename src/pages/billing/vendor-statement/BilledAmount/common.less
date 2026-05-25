@@ -1,0 +1,99 @@
+.billedAmount {
+  background-color: #fff;
+  min-height: calc(100vh - 78px);
+
+  :global {
+    .billedAmountTable {
+      margin: 24px -0;
+    }
+
+    .ant-form-item {
+      margin-bottom: 0 !important;
+    }
+
+    .ant-pro-table-list-toolbar-container {
+      padding: 0 0 12px !important;
+    }
+  }
+
+  .header {
+    padding: 12px;
+    border-bottom: 1px solid #eff1f3;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+}
+
+.tooltipCls {
+  .billed,
+  .noVerified {
+    color: #fff !important;
+  }
+}
+
+.proofItem {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.proofUrl {
+  cursor: pointer;
+  color: #009688;
+  // word-break: break-all;
+}
+
+.customToolZIndex {
+  z-index: 999;
+}
+
+.tdHover:hover {
+  cursor: pointer;
+  background-color: #eef6f4;
+  padding: 12px;
+  margin: -12px;
+}
+
+.iconItemEdit {
+  cursor: pointer;
+  margin: 0 10px;
+  color: #009688;
+}
+
+.tableDescribe {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  color: rgba(0, 0, 0, 45%);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+
+  &_total {
+    color: rgba(0, 0, 0, 85%);
+    margin-right: 4px;
+  }
+
+  &_notes {
+    color: rgba(0, 0, 0, 85%);
+  }
+
+  &_edited {
+    color: #1890ff;
+  }
+}
+
+.noSettlement {
+  text-decoration: line-through;
+}
+
+.billed {
+  color: rgba(0, 0, 0, 25%);
+}
+
+.noVerified {
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 25%);
+}

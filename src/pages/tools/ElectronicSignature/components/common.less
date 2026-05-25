@@ -1,0 +1,150 @@
+.avatar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+}
+
+.normal {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.large {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.process {
+  padding: 6px 0 6px 6px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+
+  &_item {
+    padding-right: 12px;
+    display: flex;
+
+    &_left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &_line {
+        width: 0;
+        height: 21px;
+      }
+
+      &_empty {
+        height: 12px;
+      }
+    }
+
+    &_box {
+      margin-left: 16px;
+      display: flex;
+    }
+
+    &_content {
+      width: 164px;
+
+      &_name {
+        display: flex;
+        align-items: center;
+        height: 20px;
+        font-size: 12px;
+        color: rgba(0, 0, 0, 85%);
+      }
+
+      &_email {
+        line-height: 16px;
+        font-size: 12px;
+        color: rgba(0, 0, 0, 45%);
+      }
+    }
+
+    &_right {
+      margin-left: 12px;
+      display: flex;
+      width: 60px;
+      justify-content: flex-end;
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+}
+
+.addSignersForm {
+  height: calc(100vh - 374px);
+  overflow-y: auto;
+
+  .addSignersItem {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+
+    .addSigners {
+      margin-top: 5px;
+    }
+
+    .signerNumber {
+      width: 100%;
+      font-size: 14px;
+      margin-bottom: 8px;
+
+      span {
+        color: #ff4d4f;
+      }
+    }
+
+    .addSignersFormItem {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+  }
+}
+
+.content {
+  flex: 1;
+
+  &_top {
+    padding: 0 24px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 48px;
+    color: rgba(0, 0, 0, 85%);
+    font-size: 14px;
+
+    &_icon {
+      margin-right: 12px;
+      color: rgba(0, 150, 136, 100%);
+      font-size: 24px;
+    }
+  }
+
+  &_right {
+    display: flex;
+    align-items: center;
+  }
+}

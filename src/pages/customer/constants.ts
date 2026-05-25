@@ -1,0 +1,3 @@
+export const EVENT_MAP = {
+  PROJECT_LIST_RELOAD: 'PROJECT_LIST_RELOAD',
+};

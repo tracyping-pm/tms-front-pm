@@ -1,0 +1,36 @@
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.infoItemLabel {
+  margin-bottom: 4px;
+  height: 22px;
+  line-height: 22px;
+  font-size: 14px;
+  color: var(--character-primary-45);
+  font-weight: 400;
+  .ellipsis();
+}
+
+.infoItemValue {
+  line-height: 14px;
+  word-break: break-word;
+  font-size: 14px;
+  color: #262626;
+  font-weight: 500;
+}
+
+.infoItemWrap {
+  position: relative;
+}
+
+.divider {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background-color: rgba(5, 5, 5, 6%);
+}

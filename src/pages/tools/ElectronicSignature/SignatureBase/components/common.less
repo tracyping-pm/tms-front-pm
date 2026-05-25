@@ -1,0 +1,182 @@
+.fieldBase {
+  background-color: transparent;
+
+  :global {
+    .commonField {
+      font-size: 12px;
+      user-select: auto;
+      display: flex;
+      align-items: center;
+      top: 0;
+      left: 0;
+      border: 1px dashed transparent;
+      border-radius: 3px;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .commonField.signature {
+      width: 100px;
+      height: 30px;
+      // padding: 2px 8px;
+      font-family: Petemoss;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      .required {
+        margin-left: 8px;
+        display: inline-block;
+        color: var(--danger-color);
+      }
+    }
+
+    .commonField.date {
+      width: 78px;
+      height: 22px;
+      padding: 0;
+      box-shadow: none;
+
+      .space {
+        white-space: nowrap;
+        display: inline-block;
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        opacity: 1;
+
+        .placeholder {
+          color: var(--character-title-45);
+        }
+      }
+
+      .ant-picker {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        border: none !important;
+        opacity: 0;
+
+        .ant-picker-input {
+          height: 100%;
+
+          input {
+            display: inline-block;
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            transition: none 0s ease 0s;
+            font-weight: normal;
+            font-style: normal;
+            border: none;
+            font-size: 56px;
+
+            .ant-picker-suffix {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    .commonField.text {
+      cursor: text;
+      outline: none;
+    }
+
+    .commonField.text.placeholder {
+      position: relative;
+
+      &::after {
+        content: attr(data-placeholder);
+        position: absolute;
+        inset: 0;
+        color: var(--character-title-45);
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+.modeInit {
+  :global {
+    .commonField {
+      cursor: move;
+    }
+  }
+}
+
+.modeSigning {
+  :global {
+    .commonField {
+      cursor: pointer;
+    }
+  }
+}
+
+.modeReadonly {
+  :global {
+    .commonField {
+      cursor: initial;
+    }
+  }
+}
+
+.thumbField {
+  position: absolute;
+  opacity: 0.66;
+  z-index: 2;
+}
+
+.fieldOptionView {
+  width: 200px;
+  height: 34px;
+  font-size: 14px;
+  border-radius: 2px;
+  border: 1px solid var(--primary-color);
+  background-color: #fff;
+  cursor: move;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  :global {
+    .prefix,
+    .suffix {
+      flex-grow: 0;
+      flex-shrink: 0;
+      width: 32px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .prefix {
+      background-color: var(--primary-color);
+      color: #fff;
+    }
+
+    .suffix {
+      color: var(--character-title-45);
+    }
+
+    .name {
+      flex: auto;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .required {
+        color: var(--danger-color);
+      }
+    }
+  }
+}

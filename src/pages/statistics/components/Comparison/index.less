@@ -1,0 +1,58 @@
+.comparisonRow {
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.comparisonCard {
+  padding: 12px;
+  background-color: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  margin-bottom: 12px;
+
+  .comparisonCardTitle {
+    font-size: 24px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 88%);
+    margin-bottom: 0;
+  }
+
+  .comparisonCardContent {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+
+    .comparisonCardItem {
+      // width: 32%;
+      width: 258px;
+      border-radius: 8px;
+      border: 1px solid #f0f0f0;
+      padding: 8px 12px;
+
+      .comparisonCardLabel {
+        font-size: 14px;
+        color: rgba(0, 0, 0, 45%);
+        line-height: 22px;
+        margin-bottom: 12px;
+      }
+
+      .comparisonCardResult {
+        font-size: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .comparisonCardValue {
+        color: rgba(0, 0, 0, 88%);
+      }
+    }
+  }
+
+  .comparisonCardInitValue {
+    .comparisonCardItem {
+      width: 212px;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+.attribution {
+  width: 100%;
+
+  &_list {
+    display: flex;
+    flex-direction: column;
+    min-height: 340px;
+    max-height: 528px;
+    overflow-y: auto;
+  }
+
+  :global {
+    .ant-modal-body {
+      padding: 0 0 0 24px !important;
+    }
+  }
+}
+
+.blockVendor {
+  &Tag {
+    margin-bottom: 48px;
+    font-size: 16px;
+    color: #000000d9;
+  }
+
+  :global {
+    .ant-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .ant-form-item-row {
+      flex-flow: nowrap;
+      flex-direction: row !important;
+    }
+
+    .ant-form-item-label {
+      padding: 0;
+      width: 76px;
+      flex-shrink: 0;
+      text-align: end;
+    }
+  }
+}

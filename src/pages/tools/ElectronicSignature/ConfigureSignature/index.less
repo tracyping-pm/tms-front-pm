@@ -1,0 +1,54 @@
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.signatureDetail {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  :global {
+    .step-bar {
+      .breadcrumb {
+        .breadcrumbWrap {
+          margin-bottom: 12px;
+        }
+      }
+
+      .steps {
+        display: flex;
+        padding: 24px;
+        justify-content: space-between;
+        background: #fff;
+        box-shadow: 0 -1px 0 0 #f0f0f0 inset;
+
+        .step-comp {
+          width: 880px;
+        }
+      }
+    }
+
+    .step-content {
+      min-height: 700px;
+
+      .section {
+        height: 100%;
+      }
+
+      .section.signatureStepSection {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+      }
+    }
+  }
+}

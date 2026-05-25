@@ -1,0 +1,68 @@
+.addPodForm {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  :global {
+    .ant-btn {
+      width: 32px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+.customer-code {
+  padding-bottom: 0;
+
+  .ant-modal-content {
+    padding: 0 !important;
+
+    .ant-modal-header {
+      padding: 16px 24px;
+      margin: 0;
+    }
+
+    .ant-modal-footer {
+      padding: 10px 24px;
+      margin-top: 0;
+    }
+  }
+}
+
+.addPodFormItem {
+  width: 98%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.customerCodeTypeName {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.lineAddIcon {
+  position: absolute;
+  top: 4px;
+  left: 40px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #009688;
+}
+
+.defaultAddIcon {
+  margin-bottom: 24px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #009688;
+}
+
+.deleteIcon {
+  position: absolute;
+  top: 4px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #009688;
+}

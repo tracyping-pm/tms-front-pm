@@ -1,0 +1,70 @@
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+}
+
+.accreditation {
+  padding: 8px 0 16px;
+  box-sizing: border-box;
+  min-height: 400px;
+  width: 100%;
+}
+
+.item {
+  &_fileCategory {
+    height: 32px;
+  }
+
+  &_title {
+    // height: 22px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 85%);
+  }
+
+  &_validity {
+    // height: 22px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 45%);
+    margin-right: 24px;
+  }
+
+  &_content {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 8px;
+    margin: 0 0 32px;
+  }
+}
+
+.reviewContent {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.customInfo {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  &_label {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 45%);
+    line-height: 32px;
+  }
+
+  &_item {
+    max-width: 70%;
+    font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+.blueText {
+  color: #1677ff;
+}

@@ -1,0 +1,163 @@
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.truckListFilter {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.formBar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.toolBar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+}
+
+:global(.formBar .ant-form-item) {
+  margin-bottom: 0;
+}
+
+.addVendors {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #009688;
+  cursor: pointer;
+  user-select: none;
+}
+
+.capacityPoolVendorOperate {
+  // max-width: 380px;
+  display: flex;
+  padding: 0 12px;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  gap: 8px;
+  color: var(--primary-color);
+  font-size: 14px;
+
+  .operateItemLine {
+    color: rgba(0, 0, 0, 6%);
+  }
+}
+
+.operateItem {
+  cursor: pointer;
+  display: flex;
+  gap: 8px;
+  padding: 4px 8px;
+  align-items: center;
+
+  .revokeIcon {
+    color: #ff4d4f;
+  }
+
+  .approveIcon {
+    color: #52c41a;
+  }
+
+  &:hover {
+    color: var(--primary-color);
+    background: #eef6f4;
+
+    .revokeIcon,
+    .approveIcon {
+      color: var(--primary-color);
+    }
+  }
+}
+
+.operateDisabled {
+  color: rgba(0, 0, 0, 45%);
+  cursor: not-allowed;
+}
+
+.revokeContent {
+  width: 300px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.revokeContentTool {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.capacityPoolVendor {
+  :global {
+    .ant-pro-query-filter {
+      padding: 0 0 24px;
+    }
+  }
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.description {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 45%);
+  line-height: 20px;
+}
+
+.capacityPoolTab {
+  :global {
+    .ant-pro-query-filter.ant-pro-query-filter {
+      padding: 0;
+    }
+  }
+}
+
+.approveBtn:not(:disabled):not(.ant-btn-disabled):hover {
+  color: #52c41a;
+  border-color: #52c41a;
+  background: #fff;
+}
+
+.approveBtn {
+  color: #52c41a;
+  border-color: #52c41a;
+  background: #fff;
+}
+
+.approveTableBtn {
+  color: #52c41a !important;
+}
+
+.revokeTableBtn {
+  color: #ff4d4f !important;
+}
+
+.operate {
+  display: flex;
+  justify-content: space-between;
+}

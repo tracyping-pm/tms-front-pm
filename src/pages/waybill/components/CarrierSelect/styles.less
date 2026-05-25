@@ -1,0 +1,525 @@
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.mainContent {
+  min-height: 650px;
+}
+
+.step1 {
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  user-select: none;
+}
+
+:global(.step1 .ant-form-item) {
+  margin-bottom: 0;
+}
+
+.titleWrap {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.titleStep {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.titleStepItem {
+  font-size: 16px;
+  font-weight: 400;
+  color: #bfbfbf;
+  line-height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+
+  :global {
+    .stepNum {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #fff;
+      border: 1px solid #d9d9d9;
+      font-size: 16px;
+      color: #595959;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.titleStepActive {
+  color: #000;
+}
+
+.titleStepActive :global(.stepNum) {
+  background: #009688;
+  border: 1px solid #009688;
+  color: #fff;
+}
+
+.listItem {
+  flex: 1;
+  padding: 16px;
+  padding-top: 0;
+  border-radius: 2px;
+  border: 1px solid #d9d9d9;
+  overflow: hidden;
+}
+
+.caseTitle {
+  height: 56px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #252525;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.resolveAddress {
+  font-size: 14px;
+  font-weight: 400;
+  color: #009688;
+  line-height: 16px;
+  cursor: pointer;
+}
+
+.filters {
+  padding: 0 0 16px;
+  display: flex;
+  //align-items: center;
+  // justify-content: space-between;
+  gap: 16px;
+}
+
+.formItems {
+  // width: 100%;
+}
+
+.tableHeader {
+  height: 56px;
+  padding: 0 20px;
+  background: #fafafa;
+  box-sizing: border-box;
+
+  :global(.tableHeaderSpan) {
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+  }
+
+  .tableHeaderItem {
+    box-sizing: border-box;
+    padding-right: 10px;
+    display: flex;
+    height: 56px;
+    align-items: center;
+  }
+
+  .tableRowItem {
+    padding-right: 10px;
+  }
+
+  .tableHeaderName {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .region {
+    padding-left: 32px;
+  }
+}
+
+.waypointWrap {
+  width: 190px;
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  padding: 0 16px;
+}
+
+.waypointTitle {
+  margin-top: 24px;
+  margin-bottom: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+  line-height: 28px;
+}
+
+.iconDisable {
+  cursor: not-allowed;
+}
+
+.iconActive {
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.tableList {
+  flex: 1;
+  overflow-y: auto;
+  border: 1px solid #f2f2f2;
+  border-top: none;
+  box-sizing: border-box;
+}
+
+.footer {
+  margin-top: 24px;
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  &::before {
+    content: ' ';
+    width: calc(100% + 48px);
+    height: 1px;
+    background-color: #eff1f4;
+    position: absolute;
+    top: 0;
+    left: -24px;
+  }
+}
+
+.footerStep2,
+.footerStep3 {
+  justify-content: flex-end;
+}
+
+.selectedRoutes {
+  font-size: 14px;
+  font-weight: 500;
+  color: #838ca1;
+  line-height: 22px;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.resolveAddressWrap {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.resolveAddressInput {
+  flex: 1;
+}
+
+.resolveAddressBtn {
+  flex: 0 0 auto;
+}
+
+.selectAdress {
+  :global {
+    .listTitle {
+      margin-bottom: 14px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #252525;
+      line-height: 24px;
+    }
+
+    .listContent {
+      padding: 0 24px;
+      height: 548px;
+      border-radius: 2px;
+      opacity: 1;
+      border: 1px solid #d9d9d9;
+      overflow: auto;
+    }
+  }
+}
+
+.itemAddress {
+  padding: 24px 0 2px;
+  border-bottom: 1px solid #eff1f3;
+  user-select: none;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  :global {
+    .title {
+      margin-bottom: 16px;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(0, 0, 0, 85%);
+      line-height: 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .btns {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 16px;
+    }
+
+    .routeRegion {
+      margin-bottom: 12px;
+    }
+
+    .routeRegion,
+    .address {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .label {
+      width: 84px;
+      font-size: 14px;
+      font-family: Roboto-Regular, Roboto;
+      font-weight: 400;
+      color: #838ca1;
+      line-height: 22px;
+      text-align: right;
+    }
+
+    .value {
+      flex: 1;
+      font-size: 14px;
+      font-weight: 500;
+      color: #252525;
+      line-height: 22px;
+      .ellipsis();
+    }
+  }
+}
+
+.sortIconTop {
+  transform: rotate(90deg);
+  transform-origin: center;
+}
+
+.sortIconBottom {
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+.sortIconTop,
+.sortIconBottom {
+  color: #8c8c8c;
+  cursor: pointer;
+
+  &:hover {
+    color: #009688;
+  }
+}
+
+.sortIconDisabled {
+  color: #d9d9d9;
+  cursor: not-allowed;
+
+  &:hover {
+    color: #d9d9d9;
+  }
+}
+
+.routesMap {
+  :global {
+    .routeListWrap {
+      height: 100%;
+      background: #fff;
+      border: 1px solid #d9d9d9;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .routeListTitle {
+      height: 56px;
+      padding: 16px;
+      font-size: 18px;
+      font-weight: 500;
+      color: #252525;
+      line-height: 28px;
+      display: flex;
+      align-items: center;
+    }
+
+    .routeListContent {
+      flex: 1;
+
+      .routeListCase {
+        max-height: 540px;
+        overflow-y: auto;
+      }
+
+      .routeItem {
+        padding: 16px;
+        position: relative;
+
+        &::after {
+          content: ' ';
+          width: calc(100% - 32px);
+          border-top: 1px dashed #eff1f4;
+          position: absolute;
+          left: 16px;
+          bottom: 0;
+        }
+
+        &:last-child {
+          &::after {
+            display: none;
+          }
+        }
+
+        .alternative {
+          margin-bottom: 10px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 16px;
+
+          .alternativeTitle {
+            font-size: 14px;
+            font-weight: 500;
+            color: #252525;
+            line-height: 22px;
+          }
+
+          .alternativeDistance {
+            font-size: 14px;
+            font-weight: 700;
+            color: #252525;
+            line-height: 22px;
+          }
+        }
+
+        .routeInfo {
+          font-size: 14px;
+          font-weight: 400;
+          color: #595959;
+          line-height: 22px;
+        }
+      }
+
+      .routeItem.active {
+        background: rgba(0, 150, 136, 6%);
+        border-radius: 2px;
+        border: 2px solid #009688;
+
+        .alternativeDistance {
+          color: #009688;
+        }
+      }
+    }
+
+    .mapWrap {
+      min-height: 548px;
+    }
+  }
+}
+
+.selectTruck {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  :global {
+    .ant-form-item {
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+.requireType {
+  position: relative;
+  margin: -24px -24px 12px;
+  padding: 0 33px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  height: 46px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 85%);
+  border-bottom: 1px solid rgba(0, 0, 0, 6%);
+
+  &::before {
+    position: absolute;
+    left: 24px;
+    top: 16px;
+    display: block;
+    content: '*';
+    font-size: 14px;
+    color: rgba(255, 77, 79, 100%);
+  }
+}
+
+.truckTrue {
+  position: relative;
+  display: flex;
+  padding-left: 16px;
+
+  &::before {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    display: block;
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #52c41a;
+  }
+}
+
+.truckFalse {
+  position: relative;
+  display: flex;
+  padding-left: 16px;
+
+  &::before {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    display: block;
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #ff4d4f;
+  }
+}

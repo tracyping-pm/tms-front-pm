@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: uat-tms-front-server
+  name: uat-tms-front-server
+  namespace: uat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: uat-tms-front-server
+  template:
+    metadata:
+      annotations:
+        k8s.aliyun.com/acr-instance-id: cri-1mqbwrg11ts5ku6j
+        reloader.stakater.com/auto: 'true'
+      labels:
+        app: uat-tms-front-server
+    spec:
+      containers:
+        - name: app
+          image: ${IMAGE}
+          imagePullPolicy: Always
+          env:
+            - name: APP_ENV
+              value: "uat"
+          ports:
+            - containerPort: 80
+              name: http
+              protocol: TCP
+          livenessProbe:
+            failureThreshold: 3
+            initialDelaySeconds: 300
+            periodSeconds: 30
+            successThreshold: 1
+            tcpSocket:
+              port: 80
+            timeoutSeconds: 1
+          readinessProbe:
+            failureThreshold: 3
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            successThreshold: 3
+            tcpSocket:
+              port: 80
+            timeoutSeconds: 1
+          resources:
+            limits:
+              cpu: '1'
+              ephemeral-storage: 10Gi
+              memory: 1Gi
+            requests:
+              cpu: '1'
+              ephemeral-storage: 10Gi
+              memory: 1Gi
+      restartPolicy: Always

@@ -1,0 +1,61 @@
+.summary {
+  &_wrap {
+    display: flex;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  &_item {
+    flex: 1;
+    border-radius: 8px;
+    padding: 12px;
+    background-color: #fff;
+    box-shadow:
+      0 1px 2px 0 rgba(0, 0, 0, 3%),
+      0 1px 6px -1px rgba(0, 0, 0, 2%),
+      0 2px 4px 0 rgba(0, 0, 0, 2%);
+  }
+
+  &_header {
+    font-size: 14px;
+    line-height: 22px;
+    color: rgba(0, 0, 0, 85%);
+    margin-bottom: 8px;
+  }
+
+  &_count {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 88%);
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .subTitle {
+    color: rgba(0, 0, 0, 45%);
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  &_comparativeData {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 14px;
+  }
+
+  &_footerCount {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .growth {
+    color: #52c41a;
+  }
+
+  .reduce {
+    color: #ff4d4f;
+  }
+}

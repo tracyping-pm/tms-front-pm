@@ -1,0 +1,70 @@
+.singleUploadContainer {
+  :global {
+    .file-list-wrap {
+      padding-right: 10px;
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      overflow: auto;
+      max-height: 300px;
+    }
+  }
+
+  .uploadWrap {
+    .uploadIcon {
+      margin-bottom: 0;
+      color: rgba(0, 0, 0, 45%);
+    }
+
+    .uploadIntroText {
+      line-height: 16px;
+      font-size: 12px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.imageTag {
+  position: absolute;
+  right: -16px;
+  top: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(45deg);
+  width: 60px;
+  height: 18px;
+  font-size: 10px;
+  color: #fff;
+  z-index: 9;
+  background-image: url('../../../../public/img/file_common_tag.png');
+}
+
+.modeChangeCase {
+  padding: 4px 0;
+  display: flex;
+  justify-content: end;
+
+  :global {
+    .trigger-icon {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+}
+
+:global {
+  .ant-form-item-has-error {
+    .ant-upload-wrapper .ant-upload-drag {
+      border-color: var(--danger-color);
+    }
+  }
+}

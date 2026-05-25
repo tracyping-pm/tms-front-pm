@@ -1,0 +1,42 @@
+.customExportFields {
+  .customExportFieldsAll {
+    margin-bottom: 4px;
+  }
+
+  .customExportFieldsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .customExportFieldsItem {
+    // height: 360px;
+    // display: flex;
+    // flex-direction: column;
+    :global {
+      .ant-checkbox-group {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        // flex-direction: column;
+        flex-wrap: wrap;
+      }
+
+      .ant-checkbox-group-item {
+        width: 299px;
+        align-items: center;
+      }
+    }
+  }
+
+  .customFieldsHeader {
+    width: 100%;
+    display: flex;
+    gap: 12px;
+  }
+
+  .customFieldName {
+    font-size: 14px;
+    font-weight: 500;
+  }
+}

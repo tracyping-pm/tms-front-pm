@@ -1,0 +1,149 @@
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.card {
+  //margin-top: 16px;
+  background-color: #fff;
+  border-radius: 2px;
+
+  &_header {
+    display: flex;
+    justify-content: space-between;
+
+    &_btn {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &_content {
+    border-bottom: 1px solid #eff1f3;
+
+    &_left {
+      display: flex;
+      flex-direction: column;
+      //gap: 32px;
+      padding: 24px 24px 24px 0;
+    }
+
+    &_center {
+      padding: 24px;
+      height: 100%;
+      border-left: 1px solid #eff1f3;
+      border-right: 1px solid #eff1f3;
+    }
+
+    &_right {
+      display: flex;
+      flex-direction: column;
+      //gap: 32px;
+      padding: 24px;
+    }
+
+    &_item {
+      width: 60%;
+      display: flex;
+
+      &_icon {
+        width: 20px;
+        height: 20px;
+      }
+
+      &_gap {
+        max-height: 210px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+      }
+
+      &_address {
+        margin-left: 6px;
+        flex: 1;
+
+        &_name {
+          // flex: 1;
+          white-space: pre-wrap;
+          font-size: 14px;
+          font-family: Roboto-Bold, Roboto;
+          font-weight: 700;
+          color: #252525;
+          line-height: 18px;
+        }
+
+        &_name2 {
+          white-space: pre-wrap;
+          word-break: break-all;
+          font-size: 14px;
+          font-family: Roboto-Bold, Roboto;
+          font-weight: 700;
+          color: #252525;
+          line-height: 18px;
+        }
+
+        &_desc {
+          margin-top: 6px;
+          flex: 1;
+          white-space: pre-wrap;
+          font-size: 14px;
+          font-family: Roboto-Medium, Roboto;
+          font-weight: 500;
+          color: rgba(0, 0, 0, 60%);
+          line-height: 22px;
+        }
+      }
+    }
+
+    &_label {
+      width: 40%;
+    }
+  }
+
+  &_footer {
+    margin-bottom: -8px;
+    padding-top: 16px;
+    font-size: 14px;
+    font-family: Roboto-Medium, Roboto;
+    font-weight: 500;
+    color: #666;
+  }
+
+  &_title {
+    margin-bottom: 16px;
+    font-size: 18px;
+    font-family: Roboto-Medium, Roboto;
+    font-weight: 500;
+    color: #000;
+
+    &_left {
+      width: 60%;
+    }
+
+    &_right {
+      width: 40%;
+    }
+  }
+}
+
+.stopPoints {
+  :global {
+    .customTable {
+      .ant-table-wrapper {
+        min-height: 250px;
+      }
+
+      .ant-pro-query-filter {
+        padding: 0;
+        padding-bottom: 10px;
+      }
+
+      .ant-pro-table-list-toolbar-container {
+        padding: 0;
+        padding-bottom: 10px;
+      }
+    }
+  }
+}

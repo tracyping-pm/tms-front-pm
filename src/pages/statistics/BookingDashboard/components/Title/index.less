@@ -1,0 +1,56 @@
+.titleWrap {
+  padding: 8px 0;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  :global {
+    .left {
+      .title {
+        display: flex;
+        align-items: center;
+
+        .mainTitle {
+          font-size: 16px;
+          font-weight: 500;
+          color: #262626;
+          line-height: 24px;
+        }
+
+        .tooltip {
+          margin-left: 8px;
+          color: #838ca1;
+        }
+      }
+
+      .extra {
+        margin-left: 8px;
+      }
+    }
+
+    .right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+  }
+}
+
+.subTitle {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 88%);
+  line-height: 22px;
+  margin-bottom: 8px;
+}
+
+.outSideTitle {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #000;
+  line-height: 28px;
+}

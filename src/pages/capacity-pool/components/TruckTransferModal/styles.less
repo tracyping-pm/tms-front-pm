@@ -1,0 +1,123 @@
+.transferWrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  background: #fff;
+  user-select: none;
+}
+
+:global(.transferWrap .ant-form-item) {
+  margin-bottom: 0;
+}
+
+.transferItem {
+  flex: 1;
+  padding: 24px;
+  padding-top: 0;
+  border-radius: 2px;
+  border: 1px solid #d9d9d9;
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    content: ' ';
+    width: 100%;
+    height: 1px;
+    background: #eff1f3;
+    position: absolute;
+    top: 56px;
+    left: 0;
+  }
+}
+
+.transferTitle {
+  height: 56px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #252525;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+}
+
+.filters {
+  height: 64px;
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.formItems {
+  width: 100%;
+}
+
+.tableHeader {
+  padding: 0 20px;
+  background: #fafafa;
+
+  :global(.tableHeaderSpan) {
+    width: 100%;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+  }
+
+  .plateNumber {
+    padding-left: 32px;
+  }
+
+  // .truckType {
+  // }
+
+  // .vendorTag {
+  // }
+}
+
+.transferBtns {
+  height: 100%;
+  width: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.iconDisable {
+  //   pointer-events: none;
+  cursor: not-allowed;
+}
+
+.iconActive {
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+.tableList {
+  height: calc(56px * 7 + 16px);
+  overflow: auto;
+  border: 1px solid #f2f2f2;
+  border-top: none;
+}
+
+.specialTransfer {
+  :global {
+    .transferTitle {
+      margin-bottom: 16px;
+    }
+
+    .tableList {
+      height: calc(56px * 7 + 64px);
+    }
+  }
+}

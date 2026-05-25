@@ -1,0 +1,127 @@
+.header {
+  margin-top: -6px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 2px;
+
+  &_top {
+    display: flex;
+    justify-content: space-between;
+    padding: 26px 24px 23px 23px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eff1f3;
+    background: #fff;
+
+    &_left {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border-radius: 2px;
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(0, 0, 0, 85%);
+      cursor: pointer;
+      user-select: none;
+
+      &_icon {
+        font-size: 16px;
+        margin-right: 2px;
+      }
+    }
+
+    &_right {
+      display: flex;
+      gap: 24px;
+    }
+  }
+}
+
+.form {
+  :global {
+    .ant-form-item {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.editPodNumIntro {
+  margin-bottom: 24px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.addPodForm {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  :global {
+    .ant-btn {
+      width: 32px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+.addPodFormItem {
+  width: 98%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.podNumberModalIcon {
+  position: absolute;
+  top: 4px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #009688;
+}
+
+.deleteIcon {
+  position: absolute;
+  top: 4px;
+  left: 12px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #009688;
+}
+
+.infoWrap {
+  padding: 24px;
+}
+
+.cancelIntro {
+  margin-bottom: 8px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000;
+}
+
+.description {
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.textLength {
+  position: absolute;
+  right: 0;
+  bottom: -22px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  text-align: right;
+  color: rgba(0, 0, 0, 25%);
+}
+
+.textarea {
+  padding: 8px 16px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px !important;
+}

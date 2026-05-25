@@ -1,0 +1,87 @@
+.taskList {
+  background-color: #fff;
+
+  .listTitle {
+    padding-top: 12px;
+    padding-left: 12px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  :global {
+    .ant-pro-query-filter {
+      padding: 12px;
+      padding-bottom: 24px;
+    }
+
+    .ant-pro-table-search {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      margin-block-end: 0;
+    }
+
+    .customTable .ant-pro-card-body {
+      padding: 12px;
+      padding-bottom: 18px;
+    }
+
+    .customTableContainer {
+      .filterSticky {
+        &::after {
+          height: 0 !important;
+        }
+      }
+    }
+
+    .ant-table-wrapper {
+      min-height: 0 !important;
+    }
+
+    .ant-table-body {
+      max-height: 275px !important;
+    }
+
+    .ant-pro-card {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+    .ant-pro-table-list-toolbar-container {
+      padding-top: 0;
+      padding-bottom: 10px !important;
+    }
+
+    .ant-pro-table-list-toolbar-left {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .ant-pro-table-list-toolbar-title {
+      width: 100%;
+    }
+  }
+
+  .headerTitleWrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .titleText {
+      font-size: 14px;
+      color: rgba(0, 0, 0, 88%);
+    }
+
+    .titleRefresh {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      background-color: #009688;
+    }
+  }
+}

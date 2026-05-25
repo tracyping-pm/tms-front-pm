@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1" width="20"
+    height="12" viewBox="0 0 20 12">
+    <defs>
+        <mask id="master_svg0_1487_48314">
+            <g>
+                <rect x="0" y="0" width="20" height="12" rx="1" fill="#FFFFFF" fill-opacity="1" />
+            </g>
+        </mask>
+        <filter id="master_svg1_1487_48264" filterUnits="objectBoundingBox" color-interpolation-filters="sRGB" x="-4"
+            y="-2" width="29" height="22">
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+            <feOffset dy="2" dx="0" />
+            <feGaussianBlur stdDeviation="1" />
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.03999999910593033 0" />
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+        </filter>
+        <clipPath id="master_svg2_1487_48269">
+            <rect x="-0.5" y="-1" width="21" height="14" rx="0" />
+        </clipPath>
+    </defs>
+    <g mask="url(#master_svg0_1487_48314)">
+        <g filter="url(#master_svg1_1487_48264)">
+            <g>
+                <g>
+                    <g clip-path="url(#master_svg2_1487_48269)">
+                        <g>
+                            <path
+                                d="M-0.4146918,12.914359375L20.2101,12.914359375L20.2101,-0.846041025L-0.4146918,-0.846041025L-0.4146918,12.914359375ZM20.2442,12.965659375L20.2442,12.914359375L20.2442,12.965659375ZM-0.5,12.999859375L-0.5,-0.931640625L20.2954,-0.931640625L20.2954,12.999859375L-0.5,12.999859375Z"
+                                fill="#353636" fill-opacity="1" />
+                        </g>
+                        <g>
+                            <path
+                                d="M-0.4482421875,8.3447265625L20.2618578125,8.3447265625L20.2618578125,10.6552565625L-0.4482421875,10.6552565625L-0.4482421875,8.3447265625Z"
+                                fill="#FFFFFF" fill-opacity="1" />
+                        </g>
+                        <g>
+                            <path
+                                d="M-0.4482421875,10.655383203125L20.2618578125,10.655383203125L20.2618578125,12.965883203125L-0.4482421875,12.965883203125L-0.4482421875,10.655383203125ZM-0.4482421875,-0.897216796875L20.2618578125,-0.897216796875L20.2618578125,1.413303203125L-0.4482421875,1.413303203125L-0.4482421875,-0.897216796875Z"
+                                fill="#D5352C" fill-opacity="1" />
+                        </g>
+                        <g>
+                            <path
+                                d="M-0.4482421875,1.413330078125L20.2618578125,1.413330078125L20.2618578125,3.723860078125L-0.4482421875,3.723860078125L-0.4482421875,1.413330078125Z"
+                                fill="#FFFFFF" fill-opacity="1" />
+                        </g>
+                        <g>
+                            <path
+                                d="M-0.4482421875,3.7236328125L20.2618578125,3.7236328125L20.2618578125,8.3446528125L-0.4482421875,8.3446528125L-0.4482421875,3.7236328125Z"
+                                fill="#00458F" fill-opacity="1" />
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

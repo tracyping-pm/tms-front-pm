@@ -1,0 +1,70 @@
+.visitDetailContainer {
+  @label-width: 104px;
+  @tail-gap: 16px;
+  @tail-width: 10px;
+
+  padding-top: 2px;
+
+  :global {
+    .ant-timeline {
+      .ant-timeline-item {
+        &:last-child {
+          padding-bottom: 0;
+        }
+
+        .ant-timeline-item-label {
+          width: @label-width;
+        }
+
+        .ant-timeline-item-tail,
+        .ant-timeline-item-head {
+          inset-inline-start: @label-width + @tail-gap;
+        }
+
+        .ant-timeline-item-content {
+          inset-inline-start: @label-width + @tail-width;
+          width: calc(100% - @label-width - @tail-width - @tail-gap * 2);
+        }
+      }
+    }
+  }
+}
+
+.timelineLabel {
+  text-align: right;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+
+  :global {
+    .time {
+      color: var(--character-primary-65);
+    }
+
+    .year {
+      color: var(--character-primary-85);
+    }
+  }
+}
+
+.customCollapse {
+  :global {
+    .ant-collapse-item > .ant-collapse-header {
+      padding: 12px 0;
+
+      .ant-collapse-header-text {
+        color: var(--character-primary-45);
+      }
+    }
+
+    .ant-collapse .ant-collapse-content > .ant-collapse-content-box {
+      padding: 12px;
+    }
+
+    .listItemMaterial {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+  }
+}

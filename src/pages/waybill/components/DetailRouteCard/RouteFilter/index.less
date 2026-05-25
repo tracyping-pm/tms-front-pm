@@ -1,0 +1,40 @@
+.routeFilter {
+  padding: 16px;
+  padding-top: 18px;
+
+  :global {
+    .formItem {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .label {
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: 82px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        font-size: 14px;
+        font-weight: 400;
+        color: #262626;
+        line-height: 22px;
+
+        .icon {
+          color: #696969;
+        }
+      }
+
+      .select {
+        flex: auto;
+      }
+    }
+  }
+}

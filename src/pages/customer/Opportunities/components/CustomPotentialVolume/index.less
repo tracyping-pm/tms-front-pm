@@ -1,0 +1,31 @@
+.customPotentialVolume {
+  font-size: 14px;
+  display: flex;
+  justify-content: flex-start;
+
+  :global {
+    .ant-input-number-group > .ant-input-number:last-child {
+      border-inline-end-width: 0;
+      border-radius: 0;
+    }
+
+    .ant-input-number-group .ant-input-number:hover {
+      border-inline-end-width: 1px;
+    }
+
+    .ant-input-number-group .ant-input-number:focus {
+      border-inline-end-width: 1px;
+    }
+  }
+}
+
+.frequencySelect {
+  :global {
+    .ant-select-selector {
+      border-radius: 0;
+      border-start-end-radius: 6px;
+      border-end-end-radius: 6px;
+      background: rgba(0, 0, 0, 2%) !important;
+    }
+  }
+}

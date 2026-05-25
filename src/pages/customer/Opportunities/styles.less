@@ -1,0 +1,44 @@
+.rangeInput {
+  width: 209px !important;
+}
+
+.btn {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: #009688;
+}
+
+.opportunityStatus {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  :global {
+    .ant-badge {
+      display: inline;
+    }
+  }
+}
+
+.bdSelectOption {
+  display: flex;
+  justify-content: space-between;
+
+  .bdSelectOptionLabel {
+    width: 60%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .bdSelectOptionRoleName {
+    width: 38%;
+    text-align: right;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}

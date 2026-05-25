@@ -1,0 +1,36 @@
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.contentCaseWrap {
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid #eaecf0;
+  overflow: hidden;
+}
+
+.titleBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #252525;
+  line-height: 18px;
+  margin-bottom: 10px;
+}
+
+.titleValue {
+  margin-bottom: 24px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #262626;
+  line-height: 36px;
+  .ellipsis();
+}

@@ -1,0 +1,71 @@
+.customerList {
+  width: 260px;
+  padding: 8px 0;
+  border-right: 1px solid #f0f0f0;
+
+  .customerNameList {
+    max-height: 2000px;
+    overflow-y: auto;
+  }
+
+  .committedQty {
+    color: rgba(0, 0, 0, 45%);
+    font-size: 14px;
+    margin: 4px 0;
+  }
+
+  .customerNameTitle {
+    color: rgba(0, 0, 0, 88%);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .customerNameItem {
+    width: 250px;
+    padding: 4px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    &:hover {
+      background: #eef6f4;
+    }
+
+    &:hover::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 2px;
+      height: 100%;
+      background-color: #009688;
+    }
+  }
+
+  .customerNameTag {
+    display: inline-block;
+    max-width: 250px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-bottom: 8px;
+  }
+}
+
+.activeCustomerNameItem {
+  background-color: #eef6f4;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 2px;
+    height: 100%;
+    background-color: #009688;
+  }
+}

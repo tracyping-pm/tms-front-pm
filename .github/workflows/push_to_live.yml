@@ -1,0 +1,48 @@
+name: Push Docker Image to Live
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag (e.g. tms-fe-v1.2.3)'
+        required: true
+
+concurrency:
+  group: tms-fe-live-${{ inputs.tag }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  repush:
+    runs-on: ubuntu-latest
+    environment: live
+    steps:
+      - name: Checkout (fetch tags)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate tag exists
+        run: |
+          if ! git rev-parse -q --verify "refs/tags/${{ inputs.tag }}" >/dev/null; then
+            echo "Invalid tag provided: ${{ inputs.tag }}"
+            exit 1
+          fi
+
+      - name: Login to Alibaba Cloud Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ secrets.ALIBABA_REGISTRY }}
+          username: ${{ secrets.ALIBABA_USERNAME }}
+          password: ${{ secrets.ALIBABA_PASSWORD }}
+
+      - name: Pull Image from Dev
+        run: docker pull ${{ secrets.ALIBABA_REGISTRY }}/dev/tms_front:${{ inputs.tag }}
+
+      - name: Retag Image for Live
+        run: docker tag ${{ secrets.ALIBABA_REGISTRY }}/dev/tms_front:${{ inputs.tag }} ${{ secrets.ALIBABA_REGISTRY }}/live/tms_front:${{ inputs.tag }}
+
+      - name: Push Image to Live
+        run: docker push ${{ secrets.ALIBABA_REGISTRY }}/live/tms_front:${{ inputs.tag }}

@@ -1,0 +1,32 @@
+.floatBtnWrap {
+  position: relative;
+
+  :global {
+    .ant-float-btn-group {
+      width: 60px;
+      right: 16px;
+      top: calc(56px + 22px + 40px + 410px);
+      bottom: unset;
+
+      // .ant-float-btn-group-wrap {
+      //   bottom: unset;
+      // }
+
+      .ant-float-btn-group-trigger {
+        display: none;
+      }
+
+      .ant-float-btn {
+        width: 100% !important;
+
+        .ant-float-btn-body {
+          width: 100% !important;
+
+          .ant-float-btn-content {
+            width: 100% !important;
+          }
+        }
+      }
+    }
+  }
+}

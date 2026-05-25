@@ -1,0 +1,72 @@
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.predictionItem {
+  border-bottom: 1px solid #f2f2f2;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.predictionItemMainText {
+  font-size: 14px;
+  font-weight: 500;
+  color: #252525;
+  line-height: 22px;
+  margin-bottom: 4px;
+  .ellipsis();
+}
+
+.predictionItemMainDescription {
+  font-size: 14px;
+  font-weight: 400;
+  color: #595959;
+  line-height: 22px;
+  .ellipsis();
+}
+
+.resolveInput {
+  width: 100%;
+  position: relative;
+
+  :global {
+    .ant-select {
+      width: 100%;
+    }
+  }
+}
+
+.btns {
+  font-size: 12px;
+  line-height: 20px;
+  position: absolute;
+  right: 0;
+  top: -28px;
+  user-select: none;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+
+  :global {
+    .btnItem {
+      color: var(--primary-color);
+
+      &:hover {
+        cursor: pointer;
+        // border-bottom: 1px solid var(--primary-color);
+      }
+    }
+
+    .divider {
+      display: block;
+      margin: auto 8px;
+      width: 1px;
+      height: 10px;
+      background: #d9d9d9;
+    }
+  }
+}

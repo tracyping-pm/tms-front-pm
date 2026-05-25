@@ -1,0 +1,84 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+
+  &_header {
+    padding-bottom: 12px;
+    // border-bottom: #eff1f3 dashed 1px;
+
+    &_title {
+      display: flex;
+      align-items: center;
+      // height: 24px;
+      line-height: 24px;
+      font-size: 18px;
+      font-family: Roboto-Medium, Roboto;
+      font-weight: 500;
+      color: #838ca1;
+    }
+
+    &_desc {
+      margin-left: 12px;
+      display: flex;
+      align-items: center;
+      // height: 24px;
+      line-height: 24px;
+      font-size: 24px;
+      font-family: Roboto-Bold, Roboto;
+      font-weight: 500;
+      color: #262626;
+    }
+  }
+}
+
+.extraBtn {
+  display: flex;
+  align-items: center;
+}
+
+.customerCode {
+  margin-top: 24px;
+  display: flex;
+
+  &_list {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 11px 77px;
+    border: 1px dashed rgba(0, 0, 0, 10%);
+    padding: 11px 12px;
+  }
+
+  &_popover {
+    width: 177px;
+    font-size: 14px;
+    padding: 0 2px;
+  }
+
+  &_item {
+    width: 143px;
+  }
+
+  &_label {
+    color: #838ca1;
+    font-size: 14px;
+    font-weight: 500;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &_value {
+    color: #262626;
+    font-size: 14px;
+    font-weight: 500;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height: 22px;
+    // white-space: normal;
+  }
+}

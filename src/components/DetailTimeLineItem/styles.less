@@ -1,0 +1,113 @@
+.item {
+  padding-bottom: 8px;
+
+  &_avatar {
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 50%;
+    background: #009688;
+  }
+
+  &_time {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    //height: 22px;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 85%);
+
+    &_editIcon {
+      margin-left: 20px;
+      font-size: 16px;
+      color: rgb(123, 135, 155);
+      cursor: pointer;
+
+      &:hover {
+        color: #009688;
+      }
+    }
+
+    &_delIcon {
+      margin-left: 16px;
+      cursor: pointer;
+
+      &:hover {
+        color: #009688;
+      }
+    }
+  }
+
+  &_desc {
+    margin-top: 12px;
+
+    &_title {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      height: 22px;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(0, 0, 0, 85%);
+    }
+
+    &_content {
+      margin: 0;
+      white-space: pre-wrap;
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(0, 0, 0, 85%);
+      // line-height: 22px;
+
+      img {
+        max-width: 720px;
+        height: auto;
+        max-height: 1080px;
+        object-fit: cover;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  &_mater {
+    margin-top: 12px;
+
+    &_title {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      height: 22px;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(0, 0, 0, 85%);
+    }
+
+    &_file {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 8px;
+    }
+  }
+}
+
+.file {
+  &_item {
+    margin: 4px 0 6px;
+  }
+}
+
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 240px;
+}

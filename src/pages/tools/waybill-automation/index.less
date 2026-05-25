@@ -1,0 +1,154 @@
+.waybillAutomation {
+  min-height: 800px;
+  padding: 37px 52px;
+  background-color: #fff;
+
+  :global {
+    .content {
+      // width: 924px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      .tips {
+        width: 924px;
+        padding: 24px;
+        border-radius: 8px;
+        background: #f5f5f5;
+
+        .title {
+          margin-bottom: 12px;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 32px;
+        }
+
+        .tips-content {
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+          font-size: 16px;
+          font-style: normal;
+          line-height: 24px;
+          color: rgba(0, 0, 0, 88%);
+        }
+
+        .tips-content-line {
+          padding-left: 12px;
+          position: relative;
+          display: flex;
+          gap: 4px;
+
+          &::before {
+            content: '•'; /* 使用圆点字符 */
+            position: absolute;
+            left: 0;
+            top: 1.5px;
+            font-size: 1.2em;
+            line-height: 1;
+            color: #333; /* 可自定义颜色 */
+          }
+        }
+
+        .tips-content-desc {
+          color: rgba(0, 0, 0, 65%);
+        }
+      }
+
+      .operationContent {
+        display: flex;
+        justify-content: flex-start;
+        gap: 24px;
+
+        :global {
+          .ant-spin-container {
+            height: 100%;
+          }
+        }
+      }
+
+      .operationWrap {
+        width: 924px;
+        padding: 16px 60px;
+        background: #f5f5f5;
+      }
+
+      .projectTitle {
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+      }
+
+      .operation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+
+        .operationBtn {
+          padding: 12px;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          border-radius: 8px;
+          border: 1px solid #d9d9d9;
+        }
+
+        .operationBtnText {
+          width: 100%;
+          word-break: keep-all;
+        }
+      }
+
+      .result {
+        flex: 1;
+        padding: 24px;
+        border-radius: 8px;
+        background: #f5f5f5;
+
+        .result-title {
+          margin-bottom: 24px;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 24px;
+        }
+
+        .result-info {
+          // display: flex;
+          // align-items: center;
+          // gap: 20px;
+
+          .status {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+
+            /* Body/regular */
+            font-family: Roboto;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px; /* 157.143% */
+          }
+
+          .fail {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #ff4d4f;
+          }
+
+          .success {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #52c41a;
+          }
+        }
+      }
+    }
+  }
+}

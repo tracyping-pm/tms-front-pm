@@ -1,0 +1,402 @@
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.mainContent {
+  min-height: 650px;
+}
+
+.titleWrap {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.titleStep {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.titleStepItem {
+  font-size: 16px;
+  font-weight: 400;
+  color: #bfbfbf;
+  line-height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+
+  :global {
+    .stepNum {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #fff;
+      border: 1px solid #d9d9d9;
+      font-size: 16px;
+      color: #595959;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.titleStepActive {
+  color: #000;
+}
+
+.titleStepActive :global(.stepNum) {
+  background: #009688;
+  border: 1px solid #009688;
+  color: #fff;
+}
+
+.listItem {
+  flex: 1;
+  padding: 16px;
+  padding-top: 0;
+  border-radius: 2px;
+  border: 1px solid #d9d9d9;
+  overflow: hidden;
+}
+
+.caseTitle {
+  height: 56px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #252525;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer {
+  margin-top: 24px;
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  &::before {
+    content: ' ';
+    width: calc(100% + 48px);
+    height: 1px;
+    background-color: #eff1f4;
+    position: absolute;
+    top: 0;
+    left: -24px;
+  }
+}
+
+.footerStep2,
+.footerStep3 {
+  justify-content: flex-end;
+}
+
+.selectedRoutes {
+  font-size: 14px;
+  font-weight: 500;
+  color: #838ca1;
+  line-height: 22px;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.selectAdress {
+  :global {
+    .listWrap {
+      border-radius: 2px;
+      border: 1px solid #d9d9d9;
+      overflow: hidden;
+    }
+
+    .listHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+      padding: 24px 24px 16px;
+      border-bottom: 1px solid #eff1f3;
+
+      .listTitle {
+        font-size: 16px;
+        font-weight: 500;
+        color: #252525;
+        line-height: 24px;
+      }
+
+      .extra {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+      }
+    }
+
+    .listContent {
+      padding: 0 24px;
+      height: 548px;
+      opacity: 1;
+      overflow: auto;
+      position: relative;
+
+      .empty {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .routeCodeWrap {
+      margin-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+
+      .routeCodeLabel {
+        font-size: 14px;
+        font-weight: 500;
+        color: rgba(0, 0, 0, 85%);
+        line-height: 22px;
+        position: relative;
+        top: 4px;
+      }
+
+      .routeCodeInput {
+        flex: 1;
+      }
+    }
+  }
+}
+
+.itemAddress {
+  padding: 24px 0;
+  border-bottom: 1px solid #eff1f3;
+  // user-select: none;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  :global {
+    .title {
+      margin-bottom: 16px;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(0, 0, 0, 85%);
+      line-height: 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .extra {
+      display: flex;
+      align-items: center;
+      user-select: none;
+    }
+
+    .btns {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 16px;
+
+      > span {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .routeRegion,
+    .address {
+      margin-bottom: 12px;
+    }
+
+    .routeRegion,
+    .address,
+    .labelField {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .label {
+      width: 84px;
+      font-size: 14px;
+      font-family: Roboto-Regular, Roboto;
+      font-weight: 400;
+      color: #838ca1;
+      line-height: 22px;
+      text-align: right;
+    }
+
+    .value {
+      flex: 1;
+      font-size: 14px;
+      font-weight: 500;
+      color: #252525;
+      line-height: 22px;
+      .ellipsis();
+    }
+  }
+}
+
+.sortIconTop {
+  transform: rotate(90deg);
+  transform-origin: center;
+}
+
+.sortIconBottom {
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+.sortIconTop,
+.sortIconBottom {
+  color: #8c8c8c;
+  cursor: pointer;
+
+  &:hover {
+    color: #009688;
+  }
+}
+
+.sortIconDisabled {
+  color: #d9d9d9;
+  cursor: not-allowed;
+
+  &:hover {
+    color: #d9d9d9;
+  }
+}
+
+.routesMap {
+  :global {
+    .routeListWrap {
+      height: 100%;
+      background: #fff;
+      border: 1px solid #d9d9d9;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .routeListTitle {
+      height: 56px;
+      padding: 16px;
+      font-size: 18px;
+      font-weight: 500;
+      color: #252525;
+      line-height: 28px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #eff1f3;
+    }
+
+    .routeListContent {
+      padding-top: 14px;
+      border-top: 1px solid #d9d9d9;
+      flex: 1;
+
+      .routeListCase {
+        max-height: 540px;
+        overflow-y: auto;
+      }
+
+      .routeItem {
+        padding: 16px;
+        border: 2px solid #fff;
+        position: relative;
+
+        &::after {
+          content: ' ';
+          width: calc(100% - 32px);
+          border-top: 1px dashed #eff1f4;
+          position: absolute;
+          left: 16px;
+          bottom: 0;
+        }
+
+        &:last-child {
+          &::after {
+            display: none;
+          }
+        }
+
+        .alternative {
+          margin-bottom: 10px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 16px;
+
+          .alternativeTitle {
+            font-size: 14px;
+            font-weight: 500;
+            color: #252525;
+            line-height: 22px;
+          }
+
+          .alternativeDistance {
+            font-size: 14px;
+            font-weight: 700;
+            color: #252525;
+            line-height: 22px;
+          }
+        }
+
+        .routeInfo {
+          font-size: 14px;
+          font-weight: 400;
+          color: #595959;
+          line-height: 22px;
+        }
+      }
+
+      .routeItem.active {
+        background: rgba(0, 150, 136, 6%);
+        border-radius: 2px;
+        border: 2px solid #009688;
+
+        &::after {
+          display: none;
+        }
+
+        .alternativeDistance {
+          color: #009688;
+        }
+      }
+    }
+
+    .mapWrap {
+      position: relative;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.unbilledBreakdownByCustomer {
+  padding: 24px;
+  background-color: #fff;
+
+  :global {
+    .unbilled-breakdown-by-customer-table {
+      background-color: #fff;
+
+      .ant-btn {
+        padding: 0;
+        height: auto;
+      }
+
+      .total-cell {
+        color: rgba(0, 0, 0, 88%);
+        font-weight: bolder;
+      }
+
+      .table-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .cell-toggle {
+        top: calc(50% + 6px);
+      }
+
+      .total-row {
+        td {
+          background-color: #fafafa;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+.accreditation {
+  padding: 8px 0 16px;
+  box-sizing: border-box;
+  min-height: 400px;
+  width: 100%;
+}
+
+.item {
+  &_title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 85%);
+
+    &_icon {
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+
+      &:hover {
+        color: #009688;
+      }
+    }
+  }
+
+  &_time {
+    display: flex;
+    // align-items: center;
+
+    margin-left: 8px;
+    color: #00000073;
+    line-height: 22px;
+    // padding-top: 10px;
+
+    :global {
+      .ant-form-item {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+
+  &_content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px 0 0;
+    margin: 0 0 32px;
+
+    &_desc {
+      margin-left: 8px;
+      width: 168px;
+      color: #00000073;
+      line-height: 22px;
+    }
+  }
+}
+
+.add {
+  margin-bottom: 84px;
+}
+
+.file {
+  &_item {
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+  }
+}
+
+.fileNumber {
+  color: rgba(0, 0, 0, 45%);
+  font-size: 12px;
+}

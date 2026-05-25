@@ -1,0 +1,40 @@
+.invoiceOcrItem {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+
+  :global {
+    .ant-form-item-control-input-content {
+      display: flex;
+      gap: 4px;
+      align-items: start;
+    }
+
+    .btn-group {
+      flex: 0;
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 4px;
+      align-items: center;
+    }
+  }
+}
+
+.fakeLabel {
+  margin-bottom: 8px;
+  font-size: 14px;
+
+  &::before {
+    content: '*';
+    display: inline-block;
+    margin-inline-end: 4px;
+    color: #ff4d4f;
+    font-size: 14px;
+    font-family: SimSun, sans-serif;
+    line-height: 1;
+  }
+}
+
+.fakeErrors {
+  color: #ff4d4f;
+}

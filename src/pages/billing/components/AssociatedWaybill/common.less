@@ -1,0 +1,69 @@
+.associatedWaybill {
+  background-color: #fff;
+  min-height: calc(100vh - 78px);
+
+  :global {
+    .associatedWaybillTable {
+      margin: 24px -0;
+    }
+
+    .ant-pro-query-filter {
+      padding: 0 24px 24px;
+    }
+
+    .ant-form-item {
+      margin-bottom: 0 !important;
+    }
+
+    .ant-pro-table-list-toolbar-container {
+      padding: 12px 0 !important;
+    }
+  }
+
+  .header {
+    padding: 12px;
+    border-bottom: 1px solid #eff1f3;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .tableDescribe {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: rgba(0, 0, 0, 45%);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+
+    &_total {
+      color: rgba(0, 0, 0, 85%);
+      margin-right: 4px;
+    }
+  }
+}
+
+.waybillItem {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+
+  :global {
+    .ant-form-item-control-input-content {
+      display: flex;
+      gap: 4px;
+      align-items: start;
+    }
+  }
+
+  .btn-group {
+    flex: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 4px;
+    align-items: center;
+  }
+}

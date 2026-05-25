@@ -1,0 +1,122 @@
+.nodeDetailDrawerRoot {
+  :global {
+    .ant-drawer-content-wrapper {
+      width: 1040px !important;
+    }
+  }
+}
+
+.nodeDetailDrawer {
+  :global {
+    .ant-drawer-header {
+      padding: 0 24px;
+      min-height: 46px;
+    }
+
+    .ant-drawer-body {
+      padding: 24px 12px;
+      background-color: #fff;
+    }
+
+    .ant-form-item .ant-form-item-label {
+      overflow: unset;
+    }
+
+    .ant-form-item .ant-form-item-control-input-content {
+      word-break: break-all;
+    }
+  }
+
+  .information {
+    width: 100%;
+    margin-bottom: 24px;
+
+    .informationTitle {
+      width: 100%;
+      text-align: right;
+      font-size: 14px;
+    }
+
+    .informationText {
+      font-size: 14px;
+    }
+  }
+
+  .customLabel {
+    width: 100%;
+    line-height: 20px;
+    text-align: start;
+    word-break: break-all;
+  }
+
+  .customLabelCharge {
+    display: flex;
+    justify-content: end;
+    line-height: 20px;
+    word-break: break-all;
+    text-align: right;
+    margin-top: 6px;
+  }
+
+  .commonChargeFields {
+    width: 100%;
+    display: flex;
+
+    :global {
+      .ant-row {
+        width: 100% !important;
+      }
+
+      .ant-col-18 {
+        max-width: 100% !important;
+      }
+    }
+  }
+
+  .customLabelChargeSymbol {
+    padding: 0 8px 0 2px;
+  }
+
+  .customLabelRequired {
+    &::before {
+      display: inline-block;
+      margin-inline-end: 4px;
+      color: #ff4d4f;
+      font-size: 14px;
+      font-family: SimSun, sans-serif;
+      line-height: 1;
+      content: '*';
+    }
+  }
+
+  .customLabelMargin {
+    margin-bottom: 24px;
+    margin-top: 0;
+  }
+
+  .assignee {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  .headerTitle {
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 0;
+    border-bottom: 2px solid #009688;
+    line-height: 1.5;
+  }
+
+  .footer {
+    width: 100%;
+    padding: 10px 8px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}

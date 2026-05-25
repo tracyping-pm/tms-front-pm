@@ -1,0 +1,132 @@
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.listForm {
+  display: flex;
+  flex-direction: row;
+}
+
+.listWarp {
+  min-height: 200px;
+  max-height: 450px;
+  border-top: 1px solid #f2f2f2;
+  overflow: hidden auto;
+}
+
+.listItem {
+  width: 100%;
+  font-size: 14px;
+  color: #595959;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.listItemSpan {
+  height: 60px;
+  line-height: 60px;
+  .ellipsis();
+}
+
+.warnModalTitle {
+  margin-top: 6px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f1f1f;
+  line-height: 32px;
+  text-align: center;
+}
+
+.warnModalFont {
+  margin: 24px auto 26px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #262522;
+  line-height: 22px;
+  text-align: center;
+}
+
+.desc {
+  font-size: 14px;
+  color: #595959;
+  margin-bottom: 16px;
+}
+
+.rangeLabel {
+  display: flex;
+  height: 32px;
+  align-items: center;
+  font-size: 14px;
+  color: #595959;
+}
+
+:global(.ant-btn-default:not(:disabled):not(.ant-btn-disabled).resetWarnBtn) {
+  &:hover {
+    border-color: #f28532;
+    color: #f28532;
+  }
+}
+
+:global(.ant-btn-primary:not(:disabled):not(.ant-btn-disabled).submitWarnBtn) {
+  background-color: #f28532;
+  box-shadow: 0 2px 4px rgba(242, 133, 50, 40%);
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.tab {
+  padding: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+
+  &_text {
+    margin-bottom: 18px;
+    font-size: 14px;
+    line-height: 16px;
+    color: #595959;
+  }
+
+  &_text_se {
+    margin-left: 30px;
+    margin-bottom: 18px;
+    font-size: 14px;
+    line-height: 16px;
+    color: #595959;
+  }
+
+  &_text_th {
+    margin-left: 60px;
+    margin-bottom: 18px;
+    font-size: 14px;
+    line-height: 16px;
+    color: #595959;
+  }
+
+  &_text_fo {
+    margin-left: 90px;
+    margin-bottom: 18px;
+    font-size: 14px;
+    line-height: 16px;
+    color: #595959;
+  }
+}
+
+.assignModal {
+  margin-top: 12px;
+
+  :global {
+    .ant-select-selector {
+      border-radius: 2px;
+    }
+  }
+}
+
+.memberTypeCell {
+  background-color: #fafafa;
+  font-weight: bold;
+}

@@ -1,0 +1,178 @@
+.step1 {
+  background-color: #fff;
+
+  :global {
+    .basic-setting {
+      padding: 0 24px;
+
+      .case-item {
+        // padding-bottom: 4px;
+
+        .inline-form {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 32px;
+        }
+      }
+    }
+
+    .projects {
+      padding: 0 24px;
+
+      .project-list {
+        .ant-pro-card-body {
+          padding: 0;
+        }
+
+        .ant-table-placeholder {
+          .ant-table-cell {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.step2 {
+  background-color: #fff;
+
+  :global {
+    .statementWaybillList {
+      margin-top: 0;
+    }
+  }
+}
+
+.footer {
+  flex-shrink: 0;
+  flex-grow: 0;
+  padding: 12px 24px;
+  background-color: #fff;
+  border-top: 1px solid rgba(0, 0, 0, 10%);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  :global {
+    .btns {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+  }
+}
+
+.tableInfo {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  :global {
+    .selected-info {
+      color: rgba(0, 0, 0, 45%);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 22px;
+
+      .len {
+        color: rgba(0, 0, 0, 85%);
+      }
+    }
+
+    .notes-info {
+      color: var(--character-title-85);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 22px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      .linked {
+        color: rgba(0, 0, 0, 25%);
+      }
+
+      .no-settlement {
+        text-decoration: line-through;
+      }
+
+      .divider {
+        color: rgba(0, 0, 0, 25%);
+        padding: 0 4px;
+      }
+    }
+  }
+}
+
+.requiredLike {
+  position: relative;
+
+  &::before {
+    content: '*';
+    display: inline-block;
+    margin-inline-end: 4px;
+    color: #ff4d4f;
+    font-size: 14px;
+    font-family: SimSun, sans-serif;
+    line-height: 1;
+  }
+}
+
+.waybillFilterContainer {
+  margin-bottom: 24px;
+
+  :global {
+    .waybill-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+}
+
+.customTableAlert {
+  color: rgba(0, 0, 0, 45%);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+
+  :global {
+    .len {
+      color: rgba(0, 0, 0, 85%);
+    }
+  }
+}
+
+.billedProjectOption {
+  display: flex;
+  justify-content: space-between;
+
+  .billedProjectOptionLabel {
+    width: 60%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .billedProjectOptionRState {
+    width: 38%;
+    text-align: right;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}

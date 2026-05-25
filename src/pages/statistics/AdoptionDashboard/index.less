@@ -1,0 +1,73 @@
+.adoptionDashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  :global {
+    .fullscreen-wrap {
+      position: relative;
+      cursor: pointer;
+    }
+  }
+
+  iframe {
+    border: 0;
+  }
+
+  .iframeDiv {
+    height: 100%;
+    position: relative;
+  }
+
+  .fullscreenBtn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 40px;
+    opacity: 0;
+  }
+
+  .fullscreenBtn:hover {
+    opacity: 1;
+    color: #8c8c8c;
+  }
+
+  .fullscreenBtn2 {
+    position: absolute;
+    top: 5px;
+    font-size: 40px;
+    opacity: 0;
+  }
+
+  .fullscreenBtn2:hover {
+    opacity: 1;
+    color: #8c8c8c;
+  }
+
+  .certainUserTrendSearch {
+    padding: 9px;
+  }
+
+  .light {
+    background-color: #f5f5f5;
+  }
+
+  .dark {
+    background-color: rgb(24, 27, 31);
+    color: #ccccdc;
+
+    :global {
+      .ant-input,
+      .ant-input-affix-wrapper {
+        border-color: #ccccdc;
+        outline: none;
+        background-color: rgb(24, 27, 31);
+        color: #ccccdc;
+      }
+
+      .ant-input::placeholder {
+        color: #ccccdc;
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.charts {
+  padding: 24px;
+  background-color: #fff;
+}
+
+.customTooltips {
+  width: 276px;
+  border-radius: 8px;
+
+  &_title {
+    padding: 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+    line-height: 22px;
+    border-bottom: 1px solid #cacaca;
+  }
+
+  &_list {
+    padding: 12px;
+  }
+
+  &_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    border-bottom: 1px dashed #cacaca;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+  }
+
+  &_avg {
+    font-weight: 500;
+  }
+
+  &_item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 400;
+    color: #787878;
+    line-height: 20px;
+    margin-bottom: 8px;
+  }
+}
+
+.avgTren {
+  :global {
+    .ant-picker-clear {
+      display: none;
+    }
+  }
+}

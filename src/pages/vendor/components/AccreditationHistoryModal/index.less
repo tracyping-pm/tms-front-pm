@@ -1,0 +1,47 @@
+.historyMain {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.item {
+  color: rgba(0, 0, 0, 85%);
+
+  &_title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  &_time {
+    display: flex;
+    gap: 10px;
+    color: rgba(0, 0, 0, 85%);
+    line-height: 22px;
+
+    span {
+      color: #00000073;
+    }
+
+    :global {
+      .ant-form-item {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+
+  &_content {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 8px;
+    margin: 0 0 32px;
+
+    &_desc {
+      margin-left: 8px;
+      width: 168px;
+      color: #00000073;
+      line-height: 22px;
+    }
+  }
+}

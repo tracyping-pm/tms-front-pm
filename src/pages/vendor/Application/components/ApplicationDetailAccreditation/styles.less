@@ -1,0 +1,75 @@
+.accreditation {
+  padding: 16px 0;
+  box-sizing: border-box;
+  min-height: 400px;
+  width: 100%;
+}
+
+.item {
+  &_title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 22px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 85%);
+
+    &_deleteIcon {
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+
+      &:hover {
+        color: #009688;
+      }
+    }
+  }
+
+  &_time {
+    display: flex;
+    // align-items: center;
+
+    margin-left: 8px;
+    color: #00000073;
+    line-height: 22px;
+    // padding-top: 10px;
+
+    :global {
+      .ant-form-item {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+
+  &_content {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 8px;
+    margin: 0 0 32px;
+
+    &_desc {
+      // margin-top: 12px;
+      width: 168px;
+      color: #00000073;
+      line-height: 22px;
+    }
+  }
+}
+
+.add {
+  margin-bottom: 84px;
+}
+
+.file {
+  &_item {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 16px;
+  }
+}
+
+.blueText {
+  color: #1677ff;
+}

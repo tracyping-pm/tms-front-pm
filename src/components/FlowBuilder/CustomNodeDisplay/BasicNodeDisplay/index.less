@@ -1,0 +1,67 @@
+.basicNode {
+  width: 266px;
+  padding: 10px 12px;
+  background-color: #009688;
+  color: #fff;
+  border-radius: 4px;
+
+  .nodeName {
+    width: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 4px;
+    margin-bottom: 10px;
+
+    .nodeInput {
+      flex: 1;
+      border: none;
+      box-shadow: none;
+      color: #fff;
+      background-color: transparent;
+    }
+
+    .hoverNodeInput {
+      color: #000;
+      background-color: #fff;
+    }
+
+    .nodeEditIcon {
+      font-size: 16px;
+      margin-right: 4px;
+    }
+  }
+
+  .assignee {
+    height: 38px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 4px;
+    color: #000;
+    background-color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+
+    .assigneeIcon {
+      font-size: 20px;
+    }
+
+    .rightIcon {
+      font-size: 14px;
+    }
+  }
+}
+
+.validateLine {
+  border: 1px solid #ff4d4f;
+  // box-shadow: 0 0 3px 0 #ff4d4f;
+}
+
+.verificationTips {
+  color: #ff4d4f;
+  font-size: 20px;
+  position: absolute;
+  top: 30px;
+  right: -25px;
+}

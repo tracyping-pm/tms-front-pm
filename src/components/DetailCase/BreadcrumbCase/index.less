@@ -1,0 +1,38 @@
+.breadcrumbWrap {
+  height: 46px;
+  background-color: #fff;
+  font-size: 14px;
+  color: #999;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &::after {
+    content: ' ';
+    width: calc(100% + 24px * 2);
+    height: 1px;
+    background-color: #eff1f4;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.itemLast {
+  color: #8c8c8c;
+}
+
+.breadcrumbItem {
+  color: #262626;
+  cursor: pointer;
+
+  &:hover {
+    color: #009688;
+  }
+}
+
+.breadcrumbArrow {
+  color: #999;
+  margin: 0 10px;
+}

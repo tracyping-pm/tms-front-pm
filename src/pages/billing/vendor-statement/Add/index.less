@@ -1,0 +1,43 @@
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.addStatement {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  :global {
+    .step-bar {
+      min-height: 102px;
+      background: #fff;
+      box-shadow: 0 -1px 0 0 #f0f0f0 inset;
+
+      .steps {
+        padding: 24px;
+        display: flex;
+        justify-content: space-between;
+
+        .step-comp {
+          width: 880px;
+        }
+      }
+    }
+
+    .step-content {
+      // min-height: 700px;
+
+      .section {
+        height: 100%;
+      }
+    }
+  }
+}

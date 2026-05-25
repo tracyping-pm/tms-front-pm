@@ -1,0 +1,73 @@
+.projects {
+  padding: 8px 0;
+  box-sizing: border-box;
+  min-height: 400px;
+  width: 100%;
+
+  :global {
+    th.ant-table-cell {
+      background: #fff !important;
+      padding: 0 !important;
+    }
+
+    td.ant-table-cell {
+      border-bottom: 1px solid #f0f0f0 !important;
+    }
+  }
+}
+
+.commonText {
+  height: 22px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #595959;
+}
+
+.statusText {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  &_btn {
+    margin: 0;
+    padding: 0 6px;
+    display: flex;
+    align-items: center;
+    height: 24px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #009688;
+    cursor: pointer;
+    user-select: none;
+  }
+}
+
+.column {
+  &_title {
+    &_name {
+      padding: 16px;
+    }
+
+    &_list {
+      padding: 16px 0;
+      background: #fafafa;
+    }
+
+    &_label {
+      padding-left: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+  }
+}

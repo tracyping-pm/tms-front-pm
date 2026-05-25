@@ -1,0 +1,77 @@
+.header {
+  margin-top: -6px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 2px;
+
+  &_top {
+    display: flex;
+    align-items: start;
+    gap: 24px;
+    justify-content: space-between;
+    padding: 26px 24px 23px 23px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eff1f3;
+    background: #fff;
+
+    &_left {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border-radius: 2px;
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(0, 0, 0, 85%);
+      cursor: pointer;
+      user-select: none;
+
+      &_icon {
+        font-size: 16px;
+        margin-right: 2px;
+      }
+    }
+
+    &_right {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+  }
+}
+
+.customHeader {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+
+  :global {
+    .custom-header-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .custom-header-key {
+      height: 22px;
+      font-size: 14px;
+      color: #838ca1;
+      font-weight: 400;
+    }
+
+    .custom-header-value {
+      color: var(--character-primary-88);
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 28px;
+
+      .ant-badge-status-text {
+        color: var(--character-primary-88);
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 28px;
+      }
+    }
+  }
+}

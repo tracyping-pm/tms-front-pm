@@ -1,0 +1,142 @@
+.titleWrap {
+  margin-bottom: 1px;
+  padding: 24px;
+  padding-bottom: 20px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  :global {
+    .left {
+      .title {
+        display: flex;
+        align-items: center;
+
+        .mainTitle {
+          font-size: 16px;
+          font-weight: 500;
+          color: #262626;
+          line-height: 24px;
+        }
+
+        .tooltip {
+          margin-left: 8px;
+          color: #838ca1;
+        }
+      }
+
+      .subTitle {
+        font-size: 14px;
+        font-weight: 400;
+        color: #6e7079;
+        line-height: 20px;
+      }
+    }
+
+    .right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+}
+
+.outSideTitle {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #000;
+  line-height: 28px;
+}
+
+.singleTooltip {
+  width: 276px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+
+  :global {
+    .header {
+      padding: 12px;
+      font-size: 14px;
+      font-weight: 400;
+      color: #000;
+      line-height: 22px;
+      border-bottom: 1px solid #cacaca;
+    }
+
+    .heavy-item {
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .label {
+        font-size: 14px;
+        font-weight: 400;
+        color: #1f1f1f;
+        line-height: 22px;
+      }
+
+      .value {
+        font-size: 14px;
+        font-weight: bold;
+        color: #1f1f1f;
+        line-height: 22px;
+      }
+    }
+
+    .content {
+      padding: 12px;
+      position: relative;
+
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        width: calc(100% - 24px);
+        border-top: 1px dashed #cacaca;
+        position: absolute;
+        left: 12px;
+      }
+
+      &::before {
+        top: 0;
+      }
+
+      &::after {
+        bottom: 0;
+      }
+
+      .item {
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .label {
+          font-size: 12px;
+          font-weight: 400;
+          color: #787878;
+          line-height: 20px;
+        }
+
+        .value {
+          font-size: 12px;
+          font-weight: 400;
+          color: #787878;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+}

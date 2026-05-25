@@ -1,0 +1,121 @@
+.wrap {
+  padding: 0 24px;
+  background-color: #fff;
+  margin-top: 24px;
+
+  .detailWaybillList {
+    border-top: 1px solid rgba(0, 0, 0, 10%);
+    margin: 0 -24px;
+    padding: 6px 24px 0;
+
+    :global {
+      .ant-pro-query-filter {
+        padding: 16px 0 24px;
+      }
+
+      .ant-pro-query-filter-row {
+        gap: 12px;
+      }
+
+      .ant-pro-card-body {
+        padding: 24px 0;
+      }
+    }
+  }
+
+  .detailWaybillTable {
+    margin-bottom: 8px;
+
+    :global {
+      .ant-table-wrapper {
+        min-height: auto;
+      }
+    }
+  }
+
+  .editAmount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.tableDescribe {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: rgba(0, 0, 0, 45%);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+
+  &_total {
+    color: rgba(0, 0, 0, 85%);
+    margin-right: 4px;
+  }
+
+  &_notes {
+    color: rgba(0, 0, 0, 85%);
+  }
+
+  &_edited {
+    color: #1890ff;
+  }
+}
+
+.noSettlement {
+  text-decoration: line-through;
+}
+
+.billed {
+  color: rgba(0, 0, 0, 25%);
+}
+
+.noVerified {
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 25%);
+}
+
+.editedAmount {
+  :global {
+    .ant-input-number-input {
+      color: #1890ff;
+    }
+  }
+
+  color: #1890ff;
+}
+
+.redText {
+  color: #ff4d4f;
+
+  :global {
+    .ant-input-number-input {
+      color: #ff4d4f;
+    }
+  }
+}
+
+.tooltipCls {
+  font-size: 12px;
+
+  .billed,
+  .noVerified {
+    color: #fff !important;
+  }
+}
+
+.vatWhtEdited {
+  color: #1890ff;
+}
+
+.isEdit {
+  cursor: pointer;
+  color: #009688;
+}
+
+.editDisabled {
+  cursor: not-allowed !important;
+  color: rgba(0, 0, 0, 25%);
+}
