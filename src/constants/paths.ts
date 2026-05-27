@@ -85,6 +85,38 @@ const PATHS = {
   VENDOR_STATISTIC_VENDOR_COMPARISON: '/statistics/vendorAnalysis/comparison',
   VENDOR_STATISTIC_BY_CUSTOMER_TREND_DETAIL:
     '/statistics/vendorAnalysis/byCustomer/trendDetail',
+  // TMS Advance Payment Request (enhanced prototype)
+  BILLING_ADVANCE_PAYMENT: '/billing/advance-payment',
+  BILLING_ADVANCE_PAYMENT_CREATE: '/billing/advance-payment/create',
+  BILLING_ADVANCE_PAYMENT_DETAIL: '/billing/advance-payment/detail',
+
+  // TMS AP Statement Enhanced (prototype with comparison)
+  BILLING_AP_STATEMENT_ENHANCED: '/billing/ap-statement-enhanced',
+  BILLING_AP_STATEMENT_ENHANCED_CREATE: '/billing/ap-statement-enhanced/create',
+  BILLING_AP_STATEMENT_ENHANCED_DETAIL:
+    '/billing/ap-statement-enhanced/detail',
+
+  // TMS Waybill Billing (prototype)
+  BILLING_WAYBILL_BILLING: '/billing/waybill-billing',
+  BILLING_WAYBILL_BILLING_DETAIL: '/billing/waybill-billing/detail',
+
+  // VP Claim Tickets
+  VP_CLAIM_TICKETS: '/vendor/claim-tickets',
+  VP_CLAIM_TICKETS_DETAIL: '/vendor/claim-tickets/detail',
+
+  // VP Waybills
+  VP_WAYBILLS: '/vendor/waybills',
+
+  // VP Advance Payment Request
+  VP_ADVANCE_PAYMENT: '/vendor/advance-payment',
+  VP_ADVANCE_PAYMENT_CREATE: '/vendor/advance-payment/create',
+  VP_ADVANCE_PAYMENT_DETAIL: '/vendor/advance-payment/detail',
+
+  // VP Statements
+  VP_STATEMENTS: '/vendor/statements',
+  VP_STATEMENTS_CREATE: '/vendor/statements/create',
+  VP_STATEMENTS_DETAIL: '/vendor/statements/detail',
+
   NO_AUTH: '/403',
 };
 

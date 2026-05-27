@@ -44,7 +44,7 @@ import {
   themeConfig,
 } from './theme/themeConfig';
 import './theme/variables.less';
-import { buildCurrentInfo, consumeLocalhostRedirectToken } from './utils/utils';
+import { buildCurrentInfo, consumeLocalhostRedirectToken, isLocalhost } from './utils/utils';
 
 const whiteList = [PATHS.SIGNATURES_DETAIL];
 
@@ -141,7 +141,8 @@ export async function getInitialState(): Promise<{
 export const layout: RunTimeLayoutConfig = () => {
   const onPageChange = () => {
     // 如果没有登录，重定向到 login
-    if (!Cookie.get(getTokenKey())) {
+    // localhost 本地开发时跳过，mock 会提供用户信息
+    if (!Cookie.get(getTokenKey()) && !isLocalhost()) {
       const pathname = getUamUrl(UAM_RELATIVE_PATHS.LOGIN);
       const search = queryString.stringify({
         redirect: location.href,
@@ -254,7 +255,7 @@ export const request: RequestConfig = {
       if (config?.skipErrorHandler) {
         return response;
       }
-      if (+code === 401 && !whiteList.includes(location.pathname)) {
+      if (+code === 401 && !whiteList.includes(location.pathname) && !isLocalhost()) {
         Cookie.remove(getTokenKey());
 
         const pathname = getUamUrl(UAM_RELATIVE_PATHS.LOGIN);

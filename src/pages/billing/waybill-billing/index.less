@@ -1,0 +1,408 @@
+/* ── Status badges — custom colored tags not achievable with antd Badge ── */
+.statusBadge {
+  display: inline-block;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.statusDelivered {
+  background: #f6ffed;
+  color: #389e0d;
+  border: 1px solid #b7eb8f;
+}
+
+.statusInTransit {
+  background: #e6f4ff;
+  color: #0958d9;
+  border: 1px solid #91caff;
+}
+
+.statusPlanning {
+  background: #f5f5f5;
+  color: #595959;
+  border: 1px solid #d9d9d9;
+}
+
+.statusAwaitingSettlement {
+  background: #fff7e6;
+  color: #d46b08;
+  border: 1px solid #ffd591;
+}
+
+/* ── Detail page ── */
+.detailWrapper {
+  padding: 16px;
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.waybillTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.financialStatusTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: #d46b08;
+  background: #fff7e6;
+  border: 1px solid #ffd591;
+  border-radius: 4px;
+  padding: 2px 10px;
+}
+
+.financialStatusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #d46b08;
+  display: inline-block;
+}
+
+/* ── Sync success banner ── */
+.syncBanner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f6ffed;
+  border: 1px solid #b7eb8f;
+  border-radius: 6px;
+  padding: 8px 14px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  color: #389e0d;
+}
+
+/* ── Card ── */
+.card {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 16px;
+    background: var(--character-title-65);
+    border-radius: 2px;
+  }
+
+  span {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+}
+
+/* ── Truck type info row ── */
+.truckTypeGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.truckTypeGroup {
+  display: flex;
+  gap: 24px;
+}
+
+.truckTypeLabel {
+  font-size: 11px;
+  color: #999;
+  margin-bottom: 2px;
+}
+
+.truckTypeValue {
+  font-size: 13px;
+  color: #333;
+}
+
+.truckTypeValueBold {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* ── Contract Revenue / Cost split panel ── */
+.billingGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) 1px minmax(560px, 1.1fr);
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.billingGridDivider {
+  background: #f0f0f0;
+}
+
+.billingCol {
+  padding: 14px 16px;
+}
+
+.billingColHeader {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.billingColTotal {
+  font-weight: 400;
+  font-size: 12px;
+  color: #999;
+}
+
+.billingRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 8px 0;
+  border-bottom: 1px solid #f8f8f8;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.billingRowReturned {
+  background: #fff2f0;
+  margin: 0 -16px;
+  padding: 8px 16px;
+}
+
+.billingItemName {
+  font-size: 13px;
+  color: #333;
+  white-space: nowrap;
+}
+
+.billingItemStatus {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.billingItemStatusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.billingItemAmountArea {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.billingItemAmount {
+  font-size: 13px;
+  font-weight: 500;
+  text-align: right;
+  min-width: 80px;
+}
+
+/* ── Gross profit row ── */
+.grossRow {
+  display: flex;
+  gap: 32px;
+  padding-top: 12px;
+  margin-top: 8px;
+}
+
+.grossLabel {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 2px;
+}
+
+.grossValue {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* ── Operation log timeline ── */
+.logTimeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.logEntry {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 14px;
+}
+
+.logDot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logDotCircle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d9d9d9;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.logLine {
+  width: 1px;
+  flex: 1;
+  background: #f0f0f0;
+  margin-top: 2px;
+}
+
+.logText {
+  font-size: 13px;
+  color: #333;
+  margin-bottom: 2px;
+}
+
+.logTime {
+  color: #999;
+  margin-right: 10px;
+}
+
+.logActor {
+  color: #1677ff;
+  margin-right: 8px;
+}
+
+.logDetail {
+  font-size: 12px;
+  color: #888;
+  background: #fafafa;
+  border: 1px solid #f0f0f0;
+  border-radius: 4px;
+  padding: 4px 10px;
+  margin-top: 4px;
+}
+
+/* ── Edit Basic Amount modal panels (inside antd Modal) ── */
+.editModalGrid {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  margin: 0 -24px;
+}
+
+.editModalDivider {
+  background: #f0f0f0;
+}
+
+.editModalPanel {
+  padding: 16px 20px;
+}
+
+.editModalPanelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.editModalPanelTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+}
+
+.editModalStatusChip {
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.editModalStatusDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.readonlyAmountBox {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  background: #f5f5f5;
+  padding: 5px 10px;
+  min-width: 110px;
+}
+
+.currencyPrefix {
+  font-size: 13px;
+  color: #999;
+  margin-right: 4px;
+}
+
+.readonlyAmount {
+  font-size: 13px;
+  color: #666;
+}
+
+.editInputWrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.editInputPrefix {
+  font-size: 13px;
+  color: #555;
+  padding: 6px 10px;
+  background: #fafafa;
+  border-right: 1px solid #d9d9d9;
+}
+
+.editInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 6px 10px;
+  font-size: 13px;
+  background: transparent;
+}

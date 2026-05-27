@@ -138,6 +138,60 @@ export default [
         component: './vendor/Crew/Detail',
         hideInMenu: true,
       },
+      // --- Prototype: VP Claim Tickets ---
+      {
+        path: '/vendor/claim-tickets',
+        name: 'VP Claim Tickets',
+        component: './vendor/claim-tickets/List',
+      },
+      {
+        path: '/vendor/claim-tickets/detail/:id',
+        name: 'VP Claim Ticket Detail',
+        component: './vendor/claim-tickets/Detail',
+        hideInMenu: true,
+      },
+      // --- Prototype: VP Waybills ---
+      {
+        path: '/vendor/waybills',
+        name: 'VP Waybills',
+        component: './vendor/waybills/List',
+      },
+      // --- Prototype: VP Advance Payment ---
+      {
+        path: '/vendor/advance-payment',
+        name: 'VP Advance Payment',
+        component: './vendor/advance-payment/List',
+      },
+      {
+        path: '/vendor/advance-payment/create',
+        name: 'VP Create Advance Payment',
+        component: './vendor/advance-payment/Create',
+        hideInMenu: true,
+      },
+      {
+        path: '/vendor/advance-payment/detail/:id',
+        name: 'VP Advance Payment Detail',
+        component: './vendor/advance-payment/Detail',
+        hideInMenu: true,
+      },
+      // --- Prototype: VP Statements ---
+      {
+        path: '/vendor/statements',
+        name: 'VP Statements',
+        component: './vendor/statements/List',
+      },
+      {
+        path: '/vendor/statements/create',
+        name: 'VP Create Statement',
+        component: './vendor/statements/Create',
+        hideInMenu: true,
+      },
+      {
+        path: '/vendor/statements/detail/:id',
+        name: 'VP Statement Detail',
+        component: './vendor/statements/Detail',
+        hideInMenu: true,
+      },
     ],
   },
   {
@@ -375,6 +429,54 @@ export default [
         name: 'Tax Rate Setting',
         component: './billing/tax-rate',
         access: PermissionEnum.TAX_RATE_SETTING,
+      },
+      // --- Prototype: Advance Payment Request ---
+      {
+        path: '/billing/advance-payment',
+        name: 'Advance Payment',
+        component: './billing/advance-payment/List',
+      },
+      {
+        path: '/billing/advance-payment/create',
+        name: 'Create Advance Payment',
+        component: './billing/advance-payment/Create',
+        hideInMenu: true,
+      },
+      {
+        path: '/billing/advance-payment/detail/:id',
+        name: 'Advance Payment Detail',
+        component: './billing/advance-payment/Detail',
+        hideInMenu: true,
+      },
+      // --- Prototype: AP Statement Enhanced ---
+      {
+        path: '/billing/ap-statement-enhanced',
+        name: 'AP Statement (Enhanced)',
+        component: './billing/ap-statement-enhanced/List',
+      },
+      {
+        path: '/billing/ap-statement-enhanced/create',
+        name: 'Create AP Statement',
+        component: './billing/ap-statement-enhanced/Create',
+        hideInMenu: true,
+      },
+      {
+        path: '/billing/ap-statement-enhanced/detail/:id',
+        name: 'AP Statement Enhanced Detail',
+        component: './billing/ap-statement-enhanced/Detail',
+        hideInMenu: true,
+      },
+      // --- Prototype: Waybill Billing ---
+      {
+        path: '/billing/waybill-billing',
+        name: 'Waybill Billing',
+        component: './billing/waybill-billing/List',
+      },
+      {
+        path: '/billing/waybill-billing/detail/:id',
+        name: 'Waybill Billing Detail',
+        component: './billing/waybill-billing/Detail',
+        hideInMenu: true,
       },
     ],
   },

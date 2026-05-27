@@ -1,0 +1,399 @@
+/* ── Card wrapper ── */
+.pageWrapper {
+  /* padding handled by antd layout */
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  padding: 20px 24px;
+  margin-bottom: 16px;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+/* ── Empty placeholder ── */
+.emptyPlaceholder {
+  padding: 24px 0;
+  text-align: center;
+  color: #bbb;
+  font-size: 13px;
+  border: 1px dashed #e8e8e8;
+  border-radius: 4px;
+}
+
+/* ── Toast notification ── */
+.toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-size: 13px;
+  z-index: 9999;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* ── Modal overlay (hand-rolled modals in Detail/Create) ── */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalBox {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+  flex-shrink: 0;
+}
+
+.modalBody {
+  padding: 16px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 12px 20px;
+  border-top: 1px solid #f0f0f0;
+  flex-shrink: 0;
+}
+
+/* ── Button helpers ── */
+.btnDanger {
+  border: 1px solid var(--danger-color);
+  background: #fff;
+  color: var(--danger-color);
+  border-radius: 4px;
+  padding: 4px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s;
+
+  &:hover {
+    background: #fff1f0;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+/* ── Status badges ── */
+.statusBadge {
+  display: inline-block;
+  border-radius: 4px;
+  padding: 2px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.statusUnderPrep {
+  background: #fff7e6;
+  color: #d46b08;
+  border: 1px solid #ffd591;
+}
+
+.statusAwaitingComparison {
+  background: #f0f5ff;
+  color: #2f54eb;
+  border: 1px solid #adc6ff;
+}
+
+.statusAwaitingRebill {
+  background: #fff1f0;
+  color: var(--danger-color);
+  border: 1px solid #ffa39e;
+}
+
+.statusPendingPayment {
+  background: #e6f4ff;
+  color: #0958d9;
+  border: 1px solid #91caff;
+}
+
+.statusPaid {
+  background: #f6ffed;
+  color: #389e0d;
+  border: 1px solid #b7eb8f;
+}
+
+.statusCanceled {
+  background: #fff1f0;
+  color: var(--danger-color);
+  border: 1px solid #ffa39e;
+}
+
+/* ── Origin tags ── */
+.originVP {
+  display: inline-block;
+  background: #f0fcf4;
+  color: var(--primary-color);
+  border: 1px solid #87e8a3;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.originInternal {
+  display: inline-block;
+  background: #f5f5f5;
+  color: #595959;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 12px;
+}
+
+/* ── Statement type tags ── */
+.typeStandard {
+  display: inline-block;
+  background: #f0fcf4;
+  color: var(--primary-color);
+  border: 1px solid #87e8a3;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 12px;
+}
+
+.typeStandalone {
+  display: inline-block;
+  background: #fff7e6;
+  color: #d46b08;
+  border: 1px solid #ffd591;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 12px;
+}
+
+/* ── Section title with left-bar accent ── */
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 16px;
+    background: var(--character-title-65);
+    border-radius: 2px;
+  }
+
+  span {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+}
+
+/* ── KV Grid for detail info sections ── */
+.kvGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px 0;
+  margin-bottom: 8px;
+}
+
+.kvLabel {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 3px;
+}
+
+.kvValue {
+  font-size: 13px;
+  color: #333;
+}
+
+/* ── Amount Summary ── */
+.amountSummaryGrid {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr 1px 1fr;
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.amountSummaryCol {
+  padding: 16px 18px;
+}
+
+.amountSummaryDivider {
+  background: #f0f0f0;
+}
+
+.totalPayableBox {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 12px 18px;
+  background: #f6f9ff;
+  border-radius: 6px;
+  border: 1px solid #d6e4ff;
+  margin-bottom: 16px;
+}
+
+/* ── Operation Log timeline ── */
+.logTimeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.logEntry {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 14px;
+}
+
+.logDot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logDotCircle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d9d9d9;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.logLine {
+  width: 1px;
+  flex: 1;
+  background: #f0f0f0;
+  margin-top: 2px;
+}
+
+/* ── Comparison label colors ── */
+.cmpMatched {
+  color: #389e0d;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.cmpOverBilled {
+  color: var(--danger-color);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.cmpShortBilled {
+  color: #389e0d;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ── Blocking alert ── */
+.blockAlert {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff1f0;
+  border: 1px solid #ffa39e;
+  border-radius: 4px;
+  padding: 8px 14px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: var(--danger-color);
+}
+
+/* ── Reject reason box ── */
+.rejectReasonBox {
+  background: #fff1f0;
+  border: 1px solid #ffa39e;
+  border-radius: 4px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: var(--danger-color);
+}
+
+/* ── Cancel reason box ── */
+.cancelReasonBox {
+  background: #fafafa;
+  border: 1px solid #f0f0f0;
+  border-radius: 4px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: #595959;
+}
+
+/* ── Item status mini-badge ── */
+.itemStatusReturned {
+  display: inline-block;
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: #fff7e6;
+  color: #d46b08;
+  border: 1px solid #ffd591;
+}
+
+.itemStatusUnderPrep {
+  display: inline-block;
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: #f0f5ff;
+  color: #2f54eb;
+  border: 1px solid #adc6ff;
+}
+
+/* ── Success screen ── */
+.successScreen {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 56px 24px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.successIcon {
+  font-size: 44px;
+  margin-bottom: 12px;
+  color: var(--primary-color);
+}

@@ -7,6 +7,17 @@ export default (initialState: any) => {
     initialState?.currentUser?.currentUserRole?.regionId ===
     REGION_ID_ENUM.Thailand;
 
+  // 本地开发：直接开放所有权限，无需登录
+  const isLocal =
+    typeof location !== 'undefined' &&
+    (location.origin?.includes('localhost') ||
+      /\d+\.\d+\.\d+\.\d+:\d+/.test(location.origin));
+  if (isLocal) {
+    return Object.fromEntries(
+      Object.values(PermissionEnum).map((v) => [v, true]),
+    );
+  }
+
   return {
     // Home Page
     // [PermissionEnum.HOME_PAGE]: permission?.includes(PermissionEnum.HOME_PAGE),
