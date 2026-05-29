@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { history, useParams } from '@umijs/max';
-import { Button, Card, Tabs, Modal, Input, message } from 'antd';
+import { Button, Card, Modal, Input, message } from 'antd';
 import BreadcrumbCase from '@/components/CustomBreadcrumb';
 import {
   getApStatement,
@@ -193,6 +193,7 @@ const ApStatementEnhancedDetail: React.FC = () => {
   const [miscRowForm, setMiscRowForm] = useState({ object: '', amount: '', proof: '' });
   const [showReturnedDialog, setShowReturnedDialog] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
+  const [settlementTab, setSettlementTab] = useState<'waybill' | 'claim'>('waybill');
 
   const showToast = (msg: string) => {
     setToast(msg);
@@ -2092,108 +2093,111 @@ const ApStatementEnhancedDetail: React.FC = () => {
     </div>
   );
 
-  // ── Tabs config ────────────────────────────────────────────────────────────────
+  // ── Settlement Details with inline tab bar ───────────────────────────────────
 
-  const standardTabs = [
-    {
-      key: 'billing',
-      label: 'Billing Details',
-      children: (
-        <div>
-          {/* Blocking alert */}
-          {isAwaitingComparison && blockingKey && (
-            <div className={styles.blockAlert}>
-              <span>&#9888;</span>
-              <span>
-                Payment Blocked: [{blockingKey}] is {blockingReason}. Please
-                resolve before confirming RFP.
-              </span>
-            </div>
-          )}
+  const renderSettlementDetails = () => (
+    <div className={styles.card} style={{ padding: 0 }}>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          padding: '14px 20px 0',
+        }}
+      >
+        <div className={styles.sectionTitle} style={{ marginBottom: 0 }}>
+          <span>Settlement Details</span>
+        </div>
+        {isEditable && (
+          <div style={{ display: 'flex', gap: 8 }}>
+            {settlementTab === 'waybill' && (
+              <Button size="small">+ Add Waybill</Button>
+            )}
+            {settlementTab === 'claim' && (
+              <Button size="small">+ Add Claim Ticket</Button>
+            )}
+          </div>
+        )}
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          borderBottom: '1px solid #f0f0f0',
+          padding: '0 20px',
+          marginTop: 4,
+        }}
+      >
+        {(['waybill', 'claim'] as const).map((tab) => {
+          const count =
+            tab === 'waybill' ? stmt.waybills.length : stmt.claims.length;
+          const label =
+            tab === 'waybill'
+              ? `Waybill (${count})`
+              : `Claim Tickets (${count})`;
+          const active = settlementTab === tab;
+          return (
+            <button
+              key={tab}
+              onClick={() => setSettlementTab(tab)}
+              style={{
+                padding: '10px 16px',
+                fontSize: 13,
+                fontWeight: active ? 600 : 400,
+                color: active ? '#1677ff' : '#555',
+                background: 'none',
+                border: 'none',
+                borderBottom: active
+                  ? '2px solid #1677ff'
+                  : '2px solid transparent',
+                cursor: 'pointer',
+                marginBottom: -1,
+              }}
+            >
+              {label}
+            </button>
+          );
+        })}
+      </div>
+      <div style={{ padding: '16px 20px' }}>
+        {settlementTab === 'waybill' ? renderWaybillTable() : renderClaimTable()}
+      </div>
+    </div>
+  );
 
-          {/* Reject/Cancel reason */}
-          {stmt.rejectReason && currentStatus === 'Awaiting Rebill' && (
-            <div className={styles.rejectReasonBox}>
-              <strong>Reject Reason:</strong> {stmt.rejectReason}
-            </div>
-          )}
-          {stmt.cancelReason && currentStatus === 'Canceled' && (
-            <div className={styles.cancelReasonBox}>
-              <strong>Cancel Reason:</strong> {stmt.cancelReason}
-            </div>
-          )}
+  // ── Status banners ────────────────────────────────────────────────────────────
 
-          {/* Settlement section tabs */}
-          <Tabs
-            defaultActiveKey="waybill"
-            items={[
-              {
-                key: 'waybill',
-                label: `Waybill (${stmt.waybills.length})`,
-                children: renderWaybillTable(),
-              },
-              {
-                key: 'claim',
-                label: `Claim Tickets (${stmt.claims.length})`,
-                children: renderClaimTable(),
-              },
-            ]}
-          />
-
-          {/* Amount Summary */}
-          <div style={{ marginTop: 24 }}>
-            <div className={styles.sectionTitle} style={{ marginBottom: 16 }}>
-              <span>Amount Summary</span>
-            </div>
-            {renderAmountSummary()}
+  const renderStatusBanners = () => (
+    <>
+      {stmt.rejectReason && currentStatus === 'Awaiting Rebill' && (
+        <div className={styles.rejectReasonBox}>
+          <strong>Reject Reason:</strong> {stmt.rejectReason}
+        </div>
+      )}
+      {currentStatus === 'Paid' && (
+        <div
+          style={{
+            background: '#f6ffed',
+            border: '1px solid #b7eb8f',
+            borderRadius: 6,
+            padding: '12px 16px',
+            marginBottom: 16,
+            fontSize: 13,
+            color: '#389e0d',
+          }}
+        >
+          <strong>✓ Paid:</strong> Statement fully settled.
+        </div>
+      )}
+      {stmt.cancelReason && currentStatus === 'Canceled' && (
+        <div className={styles.cancelReasonBox}>
+          <strong>✕ Canceled:</strong> {stmt.cancelReason}
+          <div style={{ marginTop: 4, fontSize: 12, color: '#999' }}>
+            Associated waybills and tickets have been released.
           </div>
         </div>
-      ),
-    },
-    {
-      key: 'invoice',
-      label: 'Invoice',
-      children: renderInvoice(),
-    },
-    {
-      key: 'payment',
-      label: 'Payment',
-      children: renderPayment(),
-    },
-    {
-      key: 'log',
-      label: 'Operation Log',
-      children: renderOperationLog(),
-    },
-  ];
-
-  const standaloneTabs = [
-    {
-      key: 'misc',
-      label: 'Miscellaneous Charges',
-      children: renderStandaloneMiscCharges(),
-    },
-    {
-      key: 'invoice',
-      label: 'Invoice Management',
-      children: renderStandaloneInvoices(),
-    },
-    {
-      key: 'proof',
-      label: 'Proof',
-      children: renderStandaloneProofs(),
-    },
-    {
-      key: 'payment',
-      label: 'Payment',
-      children: renderPayment(),
-    },
-    {
-      key: 'log',
-      label: 'Operation Log',
-      children: renderOperationLog(),
-    },
-  ];
+      )}
+    </>
+  );
 
   // ── RFP Modal ────────────────────────────────────────────────────────────────
 
@@ -2421,33 +2425,141 @@ const ApStatementEnhancedDetail: React.FC = () => {
           { name: stmt.no, path: PATHS.BILLING_AP_STATEMENT_ENHANCED_DETAIL },
         ]}
       />
-      {/* Page Header */}
-      <div className={styles.card}>
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            marginBottom: 20,
-          }}
-        >
-          <span style={{ fontSize: 14, fontWeight: 700, color: '#1a1a1a' }}>
+
+      {/* Top bar: statement no + status + origin + actions */}
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          marginBottom: 16,
+        }}
+      >
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <span style={{ fontWeight: 600, fontSize: 14, color: '#1a1a1a' }}>
             {stmt.no}
           </span>
-          {renderTopActions()}
+          <span
+            className={`${styles.statusBadge} ${statusClassName(stmt.status)}`}
+          >
+            {stmt.status}
+          </span>
+          <span className={isVP ? styles.originVP : styles.originInternal}>
+            {stmt.source}
+          </span>
         </div>
-
-        {/* Statement Info */}
-        <div className={styles.sectionTitle} style={{ marginBottom: 16 }}>
-          <span>Statement Information</span>
-        </div>
-        {isStandalone ? renderStandaloneInfo() : renderStandardInfo()}
+        {renderTopActions()}
       </div>
 
-      {/* Main Content Tabs */}
-      <div className={styles.card}>
-        <Tabs items={isStandalone ? standaloneTabs : standardTabs} />
-      </div>
+      {renderStatusBanners()}
+
+      {/* Payment Blocked banner — Standard only */}
+      {!isStandalone && (isAwaitingComparison || isEditable) && blockingKey && (
+        <div className={styles.blockAlert}>
+          <span>⚠</span>
+          <span>
+            Payment Blocked: [{blockingKey}] is {blockingReason}. Please
+            resolve before confirming RFP.
+          </span>
+        </div>
+      )}
+
+      {isStandalone ? (
+        <>
+          {/* Statement Info */}
+          <div className={styles.card}>
+            <div className={styles.sectionTitle} style={{ marginBottom: 16 }}>
+              <span>Statement Info</span>
+            </div>
+            {renderStandaloneInfo()}
+          </div>
+
+          {/* Miscellaneous Charge */}
+          <div className={styles.card}>
+            <div className={styles.sectionTitle} style={{ marginBottom: 16 }}>
+              <span>Miscellaneous Charge</span>
+            </div>
+            {renderStandaloneMiscCharges()}
+          </div>
+
+          {/* Invoice Management */}
+          <div className={styles.card}>
+            <div className={styles.sectionTitle} style={{ marginBottom: 16 }}>
+              <span>Invoice Management</span>
+            </div>
+            {renderStandaloneInvoices()}
+          </div>
+
+          {/* Proof (Message Records) */}
+          <div className={styles.card}>
+            <div className={styles.sectionTitle} style={{ marginBottom: 16 }}>
+              <span>Proof (Message Records)</span>
+            </div>
+            {renderStandaloneProofs()}
+          </div>
+
+          {/* Payment */}
+          <div className={styles.card}>
+            <div className={styles.sectionTitle} style={{ marginBottom: 16 }}>
+              <span>Payment</span>
+            </div>
+            {renderPayment()}
+          </div>
+
+          {/* Operation Log */}
+          <div className={styles.card}>
+            <div className={styles.sectionTitle} style={{ marginBottom: 16 }}>
+              <span>Operation Log</span>
+            </div>
+            {renderOperationLog()}
+          </div>
+        </>
+      ) : (
+        <>
+          {/* Basic Information */}
+          <div className={styles.card}>
+            <div className={styles.sectionTitle} style={{ marginBottom: 16 }}>
+              <span>Basic Information</span>
+            </div>
+            {renderStandardInfo()}
+          </div>
+
+          {/* Settlement Details */}
+          {renderSettlementDetails()}
+
+          {/* Amount Summary */}
+          <div className={styles.card}>
+            <div className={styles.sectionTitle} style={{ marginBottom: 16 }}>
+              <span>Amount Summary</span>
+            </div>
+            {renderAmountSummary()}
+          </div>
+
+          {/* Invoice */}
+          <div className={styles.card}>
+            <div className={styles.sectionTitle} style={{ marginBottom: 16 }}>
+              <span>Invoice</span>
+            </div>
+            {renderInvoice()}
+          </div>
+
+          {/* Payment */}
+          <div className={styles.card}>
+            <div className={styles.sectionTitle} style={{ marginBottom: 16 }}>
+              <span>Payment</span>
+            </div>
+            {renderPayment()}
+          </div>
+
+          {/* Operation Log */}
+          <div className={styles.card}>
+            <div className={styles.sectionTitle} style={{ marginBottom: 16 }}>
+              <span>Operation Log</span>
+            </div>
+            {renderOperationLog()}
+          </div>
+        </>
+      )}
 
       {/* ── Dialogs ── */}
 

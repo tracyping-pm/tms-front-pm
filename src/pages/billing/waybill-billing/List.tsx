@@ -232,7 +232,7 @@ const WaybillBillingList: React.FC = () => {
           style={{ marginBottom: 14 }}
         />
       )}
-      <CustomTable<Waybill>
+      <CustomTable
         rowKey="no"
         columns={columns}
         dataSource={dataSource}

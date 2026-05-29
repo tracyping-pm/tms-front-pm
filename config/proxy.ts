@@ -36,6 +36,14 @@ function buildRemoteProxy(env: string) {
       changeOrigin: true,
       pathRewrite: { '^/uam-api': '/api' },
     },
+    // Proxy VP frontend (Vendor Portal) running on :8001 with base '/vp/'.
+    // This allows both TMS and VP to share the same origin (localhost:8000)
+    // so localStorage-based data sync works across the two apps.
+    // Start VP with: cd vp_frontend-main && pnpm start:tms-proxy
+    '/vp/': {
+      target: 'http://localhost:8001',
+      changeOrigin: true,
+    },
   };
 }
 

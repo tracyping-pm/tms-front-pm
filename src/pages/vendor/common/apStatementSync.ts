@@ -10,6 +10,7 @@
 const STORAGE_KEY = 'ap-statements-sync';
 
 export type SyncedApStmtStatus =
+  | 'Draft'
   | 'Awaiting Comparison'
   | 'Under Payment Preparation'
   | 'Awaiting Rebill'
@@ -171,6 +172,7 @@ export function appendApStmtLog(no: string, entry: ApStmtLog) {
 /** Map TMS canonical status → VP display status. */
 export function tmsStatusToVpStatus(s: SyncedApStmtStatus): string {
   const MAP: Record<SyncedApStmtStatus, string> = {
+    Draft: 'Draft',
     'Awaiting Comparison': 'Awaiting Inteluck Confirmation',
     'Under Payment Preparation': 'Awaiting Inteluck Confirmation',
     'Awaiting Rebill': 'Awaiting Re-bill',

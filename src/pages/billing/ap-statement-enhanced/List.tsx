@@ -60,22 +60,27 @@ function statusClassName(status: ApStatementStatus): string {
 // ─── Component ─────────────────────────────────────────────────────────────────
 
 const ApStatementEnhancedList: React.FC = () => {
-  // React to VP-tab cross-tab sync events
+  // React to VP-tab cross-tab sync events, and also on window focus
   const [storageVer, setStorageVer] = useState(0);
   useEffect(() => {
-    const handler = (e: StorageEvent) => {
+    const onStorage = (e: StorageEvent) => {
       if (e.key === 'ap-statements-sync') setStorageVer((v) => v + 1);
     };
-    window.addEventListener('storage', handler);
-    return () => window.removeEventListener('storage', handler);
+    const onFocus = () => setStorageVer((v) => v + 1);
+    window.addEventListener('storage', onStorage);
+    window.addEventListener('focus', onFocus);
+    return () => {
+      window.removeEventListener('storage', onStorage);
+      window.removeEventListener('focus', onFocus);
+    };
   }, []);
 
   const sampleNos = useMemo(() => new Set(SAMPLE_ROWS.map((r) => r.no)), []);
 
-  // Rows from VP-submitted statements (deduplicated against SAMPLE)
+  // Rows from VP-submitted statements (deduplicated against SAMPLE, exclude Drafts)
   const syncedRows = useMemo((): ApStatementRow[] => {
     return getAllApStatements()
-      .filter((s) => !sampleNos.has(s.no))
+      .filter((s) => !sampleNos.has(s.no) && s.status !== 'Draft')
       .map((s) => {
         const firstActor = s.operationLogs?.[0]?.actor;
         const creator =
@@ -280,7 +285,7 @@ const ApStatementEnhancedList: React.FC = () => {
   ];
 
   return (
-    <CustomTable<ApStatementRow>
+    <CustomTable
       rowKey="no"
       columns={columns}
       dataSource={allRows}

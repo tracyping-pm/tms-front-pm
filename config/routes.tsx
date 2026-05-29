@@ -138,60 +138,6 @@ export default [
         component: './vendor/Crew/Detail',
         hideInMenu: true,
       },
-      // --- Prototype: VP Claim Tickets ---
-      {
-        path: '/vendor/claim-tickets',
-        name: 'VP Claim Tickets',
-        component: './vendor/claim-tickets/List',
-      },
-      {
-        path: '/vendor/claim-tickets/detail/:id',
-        name: 'VP Claim Ticket Detail',
-        component: './vendor/claim-tickets/Detail',
-        hideInMenu: true,
-      },
-      // --- Prototype: VP Waybills ---
-      {
-        path: '/vendor/waybills',
-        name: 'VP Waybills',
-        component: './vendor/waybills/List',
-      },
-      // --- Prototype: VP Advance Payment ---
-      {
-        path: '/vendor/advance-payment',
-        name: 'VP Advance Payment',
-        component: './vendor/advance-payment/List',
-      },
-      {
-        path: '/vendor/advance-payment/create',
-        name: 'VP Create Advance Payment',
-        component: './vendor/advance-payment/Create',
-        hideInMenu: true,
-      },
-      {
-        path: '/vendor/advance-payment/detail/:id',
-        name: 'VP Advance Payment Detail',
-        component: './vendor/advance-payment/Detail',
-        hideInMenu: true,
-      },
-      // --- Prototype: VP Statements ---
-      {
-        path: '/vendor/statements',
-        name: 'VP Statements',
-        component: './vendor/statements/List',
-      },
-      {
-        path: '/vendor/statements/create',
-        name: 'VP Create Statement',
-        component: './vendor/statements/Create',
-        hideInMenu: true,
-      },
-      {
-        path: '/vendor/statements/detail/:id',
-        name: 'VP Statement Detail',
-        component: './vendor/statements/Detail',
-        hideInMenu: true,
-      },
     ],
   },
   {
@@ -219,6 +165,12 @@ export default [
         name: 'Waybills',
         component: './waybill/List',
         access: PermissionEnum.WAYBILL,
+      },
+      // --- Prototype: Waybill Billing ---
+      {
+        path: '/project/waybill-billing',
+        name: 'Waybills（New）',
+        component: './billing/waybill-billing/List',
       },
       {
         path: '/project/waybill/detail/:id',
@@ -317,6 +269,12 @@ export default [
         component: './project/ClaimTicket/components/RefundTicket/Detail/index',
         hideInMenu: true,
       },
+      {
+        path: '/project/waybill-billing/detail/:id',
+        name: 'Waybill Billing Detail',
+        component: './billing/waybill-billing/Detail',
+        hideInMenu: true,
+      },
     ],
   },
   {
@@ -381,6 +339,12 @@ export default [
         name: 'AP Statement',
         component: './billing/vendor-statement/List',
         access: PermissionEnum.VENDOR_STATEMENT,
+      },
+      // --- Prototype: AP Statement Enhanced ---
+      {
+        path: '/billing/ap-statement-enhanced',
+        name: 'AP Statement（New）',
+        component: './billing/ap-statement-enhanced/List',
       },
       {
         path: '/billing/vendor-statement/add',
@@ -448,12 +412,6 @@ export default [
         component: './billing/advance-payment/Detail',
         hideInMenu: true,
       },
-      // --- Prototype: AP Statement Enhanced ---
-      {
-        path: '/billing/ap-statement-enhanced',
-        name: 'AP Statement (Enhanced)',
-        component: './billing/ap-statement-enhanced/List',
-      },
       {
         path: '/billing/ap-statement-enhanced/create',
         name: 'Create AP Statement',
@@ -464,18 +422,6 @@ export default [
         path: '/billing/ap-statement-enhanced/detail/:id',
         name: 'AP Statement Enhanced Detail',
         component: './billing/ap-statement-enhanced/Detail',
-        hideInMenu: true,
-      },
-      // --- Prototype: Waybill Billing ---
-      {
-        path: '/billing/waybill-billing',
-        name: 'Waybill Billing',
-        component: './billing/waybill-billing/List',
-      },
-      {
-        path: '/billing/waybill-billing/detail/:id',
-        name: 'Waybill Billing Detail',
-        component: './billing/waybill-billing/Detail',
         hideInMenu: true,
       },
     ],
